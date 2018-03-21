@@ -1,23 +1,25 @@
 # Rétrospective de sprint
 
-Nom du scrum master du sprint : 
+SAURO Romain
 
 ## Ce que nous avons fait durant ce sprint
-Donnez ici la liste des histoires utilisateurs que vous avez livrés durant ce sprint.
+	/
 
 ## Ce que nous allons faire durant le prochain sprint
-Donnez ici la liste des histoires utilisateurs que vous vous engagez à terminer durant le prochain sprint.
+	Discuter plus longtemps sur la répartition des tâches.
 
 ## PDCA 
 ### Qu'avons nous testé durant ce sprint ? 
+	/
 
 ### Qu'avons nous observé ? 
+	/
 
 ### Quelle décision prenons nous suite à cette expérience ? 
+	/
 
 ### Qu'allons nous tester durant les 2 prochaines heures ? 
+	Discuter plus longtemps sur la répartition des tâches.
 
 ### À quoi verra-t-on que celà à fonctionné ?
-
-# Mémo
-N'oubliez pas d'ajouter une photo du radiateur d'information au moment de la rétrospective.
+	Des tâches bien séparées entre chaque membre du groupe afin d'être organisé et productif.
