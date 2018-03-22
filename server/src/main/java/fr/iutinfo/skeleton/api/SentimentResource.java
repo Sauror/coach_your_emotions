@@ -52,6 +52,7 @@ public class SentimentResource {
 	}
 
 	@GET
+	@Produces(MediaType.APPLICATION_JSON)
 	public List<SentimentDto> getAllSentiments(@QueryParam("q") String query) {
 		List<Sentiment> sentiments;
 		if (query == null) {
