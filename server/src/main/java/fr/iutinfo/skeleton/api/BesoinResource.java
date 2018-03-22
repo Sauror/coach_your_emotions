@@ -18,6 +18,7 @@ public class BesoinResource {
 	private static BesoinDao dao = getDbi().open(BesoinDao.class);
 
 	public BesoinResource() throws SQLException {
+		
 		if (!tableExist("besoin")) {
 			dao.createBesoinTable();
 			dao.insert(new Besoin(0, "Manger", "Besoins-vitaux"));
@@ -39,9 +40,9 @@ public class BesoinResource {
 	}
 
 	@GET
-	@Path("/{nom}")
-	public BesoinDto getBesoinByName(@PathParam("nom") String nom) {
-		Besoin besoin = dao.findByName(nom);
+	@Path("/{id}")
+	public BesoinDto getBesoinByName(@PathParam("id") int id) {
+		Besoin besoin = dao.findById(id);
 		if (besoin == null) {
 			throw new WebApplicationException(404);
 		}

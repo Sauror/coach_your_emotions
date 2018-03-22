@@ -19,14 +19,15 @@ public class SentimentResource {
 	private static SentimentDao dao = getDbi().open(SentimentDao.class);
 
 	public SentimentResource() throws SQLException {
+		dao.dropSentimentTable();
 		if (!tableExist("sentiment")) {
 			dao.createSentimentTable();
 			dao.insert(new Sentiment(0, "Content", "Content"));
-			dao.insert(new Sentiment(0, "Heureux", "Content"));
-			dao.insert(new Sentiment(0, "Joyeux", "Content"));
-			dao.insert(new Sentiment(0, "Las", "Fatigué"));
-			dao.insert(new Sentiment(0, "Endormi", "Fatigué"));
-			dao.insert(new Sentiment(0, "Démoralisé", "Triste"));
+			dao.insert(new Sentiment(1, "Heureux", "Content"));
+			dao.insert(new Sentiment(2, "Joyeux", "Content"));
+			dao.insert(new Sentiment(3, "Las", "Fatigué"));
+			dao.insert(new Sentiment(4, "Endormi", "Fatigué"));
+			dao.insert(new Sentiment(5, "Démoralisé", "Triste"));
 			
 		}
 	}
@@ -41,10 +42,9 @@ public class SentimentResource {
 	}
 
 	@GET
-	// 	@Produces(MediaType.APPLICATION_JSON)
-	@Path("/{nom}")
-	public SentimentDto getSentiment(@PathParam("nom") String nom) {
-		Sentiment sentiment = dao.findByName(nom);
+	@Path("/{id}")
+	public SentimentDto getSentiment(@PathParam("id") int id) {
+		Sentiment sentiment = dao.findById(id);
 		if (sentiment == null) {
 			throw new WebApplicationException(404);
 		}
