@@ -65,6 +65,7 @@ public class SentimentResource {
 	
 	@GET
 	@Path("/taille")
+	@Produces(MediaType.APPLICATION_JSON)
 	public int getSizeCategorie() {
 		return dao.tailleSentiment();
 		
