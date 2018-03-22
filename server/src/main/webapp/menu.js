@@ -38,12 +38,13 @@ $(document).ready(function(){
 
     $("#sentiment").click(function(event){
         $.ajax({
-           url: "hevea22:8080/cye/sentiment",
+           url: "http://172.18.49.103:8080/cye/sentiment",
            type: "GET",
-           dataType: "json",
+           contentType: 'application/json;charset=utf-8',
+
           success: function(json) {
 			  $("#output").empty()
-			  console.log(JSON.stringify(json));
+			  console.log("success");
               var list = "<ul>";
               json.forEach(function(sentiment, idx) {
                 list += " <li>" + sentiment.categorie + " - " + sentiment.nom + "</li>";
@@ -52,16 +53,18 @@ $(document).ready(function(){
 			  $("#output").append(list);	
               $("#output li").css({"font-size": 20, "font-family": "Times New Roman"});
 			},
+
            error: function(xhr, status, errorThrown){
             alert("Problem");
-            console.log("Erreur");
+            console.log( "Error: " + errorThrown );
+            console.log( "Status: " + status );
            }
         })
     });
 
     $("#besoin").click(function(event){
         $.ajax({
-           url: "hevea22:8080/cye/besoin",
+           url: "http://172.18.49.103:8080/cye/besoin",
            type: "GET",
            dataType: "json",
           success: function(json) {
@@ -77,7 +80,8 @@ $(document).ready(function(){
             },
            error: function(xhr, status, errorThrown){
             alert("Problem");
-            console.log("Erreur");
+            console.log( "Error: " + errorThrown );
+            console.log( "Status: " + status );
            }
         })
     });
