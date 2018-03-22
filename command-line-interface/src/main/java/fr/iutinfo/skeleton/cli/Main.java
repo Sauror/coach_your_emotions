@@ -66,7 +66,7 @@ public class Main {
     }
 
     private static void initUrlAndProvider(String arg) {
-        String url = arg + "/v1/";
+        String url = arg + "/cye/";
         System.out.println("Api url : " + url);
         usersProvider = new UsersProvider(url);
     }

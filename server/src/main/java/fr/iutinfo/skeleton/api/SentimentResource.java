@@ -41,6 +41,7 @@ public class SentimentResource {
 	}
 
 	@GET
+	// 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/{nom}")
 	public SentimentDto getSentiment(@PathParam("nom") String nom) {
 		Sentiment sentiment = dao.findByName(nom);
