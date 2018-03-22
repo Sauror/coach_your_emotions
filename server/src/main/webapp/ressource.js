@@ -1,57 +1,61 @@
 $(document).ready(function(){
-	$(".pRessource").hide();
-	$(".pExercice").hide();
-	$(".pEspace").hide();
+    $(".pRessource").hide();
+    $(".pExercice").hide();
+    $(".pEspace").hide();
 
-	$("#ressource").click(function(){
+    $("#ressource").click(function(){
     	$(".pRessource").show();
     	$(".pExercice").hide();
     	$(".pEspace").hide();
         $("article").hide();
     	console.log("test");
-	}); 
-    
-    // Accordeon general
-     $("#accordeon .header").click(function(event){
-     if(this.nextElementSibling.style.display === "block"){
-        $("pres1").css("display", "none");
-        this.nextElementSibling.style.display = "none";
-     }
-     else{
-        $("pres1").css("display", "none");
-        this.nextElementSibling.style.display = "block";
-     }
     }); 
 
-     //Accordeon Presentation
-      $("#accordeonPresentation .headerPres").click(function(event){
-     if(this.nextElementSibling.style.display === "block"){
-        this.nextElementSibling.style.display = "none";
-     }
-     else{
-        this.nextElementSibling.style.display = "block";
-     }
+    // Accordeon general
+    $("#accordeon .header").click(function(event){
+	if(this.nextElementSibling.style.display === "block"){
+            $("article").css("display", "none");
+            this.nextElementSibling.style.display = "none";
+	}
+	else{
+            $("article").css("display", "none");
+            this.nextElementSibling.style.display = "block";
+	}
+    }); 
+
+    //Accordeon Presentation
+    $("#accordeonPresentation .headerPres").click(function(event){
+	if(this.nextElementSibling.style.display === "block"){
+            this.nextElementSibling.style.display = "none";
+	}
+	else{
+            this.nextElementSibling.style.display = "block";
+	}
     }); 
 
     $("#sentiment").click(function(event){
+        var categorie = "";
+
         $.ajax({
             url: "http://localhost:8080/cye/sentiment",
             type: "GET",
             contentType: 'application/json;charset=utf-8',
 
             success: function(json) {
-    			$("#outputSentiment").empty()
-    			console.log("success");
+    		$("#outputSentiment").empty()
+    		console.log("success");
                 var list = "<ul>";
 
-                json.forEach(function(sentiment, idx) {
-                    list += " <li>" + sentiment.categorie + " - " + sentiment.nom + "</li>";
-    			});
+                json.forEach(function(sentiment, idx) {                    
+                    if(categorie !== sentiment.categorie){
+                        list += " <h3 class=\"SentimentParCat\">" + sentiment.categorie + "</h3>";
+                        categorie = sentiment.categorie
+                    }
+                });                
 
                 list += "</ul>";
-    			$("#outputSentiment").append(list);	
-                $("#outputSentiment li").css({"font-size": 20, "font-family": "Times New Roman"});
-    			},
+    		$("#outputSentiment").append(list);	
+    	    },
 
             error: function(xhr, status, errorThrown){
                 alert("Problem");
@@ -63,9 +67,9 @@ $(document).ready(function(){
 
     $("#besoin").click(function(event){
         $.ajax({
-           url: "http://localhost:8080/cye/besoin",
-           type: "GET",
-           dataType: "json",
+            url: "http://localhost:8080/cye/besoin",
+            type: "GET",
+            dataType: "json",
 
             success: function(json) {
                 $("#outputBesoin").empty()
@@ -81,11 +85,11 @@ $(document).ready(function(){
                 $("#outputBesoin li").css({"font-size": 20, "font-family": "Times New Roman"});
             },
 
-           error: function(xhr, status, errorThrown){
-            alert("Problem");
-            console.log( "Error: " + errorThrown );
-            console.log( "Status: " + status );
-           }
+            error: function(xhr, status, errorThrown){
+		alert("Problem");
+		console.log( "Error: " + errorThrown );
+		console.log( "Status: " + status );
+            }
         })
     });
 
