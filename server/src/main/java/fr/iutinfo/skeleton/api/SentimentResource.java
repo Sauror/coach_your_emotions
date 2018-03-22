@@ -50,7 +50,6 @@ public class SentimentResource {
 		}
 		return sentiment.convertToDto();
 	}
-	/*
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<SentimentDto> getAllSentiments(@QueryParam("q") String query) {
@@ -61,7 +60,7 @@ public class SentimentResource {
 			sentiments = dao.search("%" + query + "%");
 		}
 		return sentiments.stream().map(Sentiment::convertToDto).collect(Collectors.toList());
-	}*/
+	}
 	
 	//PB ICI
 	@GET
