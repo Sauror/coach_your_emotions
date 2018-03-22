@@ -18,7 +18,7 @@ public class BesoinResource {
 	private static BesoinDao dao = getDbi().open(BesoinDao.class);
 
 	public BesoinResource() throws SQLException {
-		
+		dao.dropBesoinTable();
 		if (!tableExist("besoin")) {
 			dao.createBesoinTable();
 			dao.insert(new Besoin(0, "Manger", "Besoins-vitaux"));
@@ -50,6 +50,7 @@ public class BesoinResource {
 	}
 
 	@GET
+	@Produces(MediaType.APPLICATION_JSON)
 	public List<BesoinDto> getAllBesoins(@QueryParam("q") String query) {
 		List<Besoin> besoins;
 		if (query == null) {
