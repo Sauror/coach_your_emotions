@@ -21,6 +21,11 @@ public class BesoinResource {
 		if (!tableExist("besoin")) {
 			dao.createBesoinTable();
 			dao.insert(new Besoin(0, "Manger", "Besoins-vitaux"));
+			dao.insert(new Besoin(1, "Boire", "Besoins-vitaux"));
+			dao.insert(new Besoin(2, "Dormir", "Besoins-vitaux"));
+			dao.insert(new Besoin(3, "Rire", "Divertissement"));
+			dao.insert(new Besoin(4, "Jouer", "Divertissement"));
+			dao.insert(new Besoin(5, "Parler", "Social"));
 		}
 	}
 

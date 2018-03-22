@@ -22,6 +22,12 @@ public class SentimentResource {
 		if (!tableExist("sentiment")) {
 			dao.createSentimentTable();
 			dao.insert(new Sentiment(0, "Content", "Content"));
+			dao.insert(new Sentiment(0, "Heureux", "Content"));
+			dao.insert(new Sentiment(0, "Joyeux", "Content"));
+			dao.insert(new Sentiment(0, "Las", "Fatigué"));
+			dao.insert(new Sentiment(0, "Endormi", "Fatigué"));
+			dao.insert(new Sentiment(0, "Démoralisé", "Triste"));
+			
 		}
 	}
 
