@@ -62,6 +62,13 @@ public class SentimentResource {
 		}
 		return sentiments.stream().map(Sentiment::convertToDto).collect(Collectors.toList());
 	}
+	
+	@GET
+	@Path("/taille")
+	public int getSizeCategorie() {
+		return dao.tailleSentiment();
+		
+	}
 
 	@DELETE
     @Path("/{id}")

@@ -35,6 +35,10 @@ public interface SentimentDao {
     @SqlQuery("select * from sentiment where id = :id")
     @RegisterMapperFactory(BeanMapperFactory.class)
     Sentiment findById(@Bind("id") int id);
-
+    
+    @SqlQuery("select count(distinct categorie) from sentiment")
+    @RegisterMapperFactory(BeanMapperFactory.class)
+    int tailleSentiment();
+    
     void close();
 }
