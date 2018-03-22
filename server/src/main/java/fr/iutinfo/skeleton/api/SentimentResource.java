@@ -65,7 +65,7 @@ public class SentimentResource {
 
 	@DELETE
     @Path("/{id}")
-    public void deleteUser(@PathParam("id") int id) {
+    public void deleteSentiment(@PathParam("id") int id) {
         dao.delete(id);
     }
 
