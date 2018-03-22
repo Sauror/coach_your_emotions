@@ -46,12 +46,35 @@ $(document).ready(function(){
 			  console.log(JSON.stringify(json));
               var list = "<ul>";
               json.forEach(function(sentiment, idx) {
-                list += " <li>" + sentiment.nom + "</li>";
+                list += " <li>" + sentiment.categorie + " - " + sentiment.nom + "</li>";
 			  });
               list += "</ul>";
 			  $("#output").append(list);	
               $("#output li").css({"font-size": 20, "font-family": "Times New Roman"});
 			},
+           error: function(xhr, status, errorThrown){
+            alert("Problem");
+            console.log("Erreur");
+           }
+        })
+    });
+
+    $("#besoin").click(function(event){
+        $.ajax({
+           url: "hevea22:8080/cye/besoin",
+           type: "GET",
+           dataType: "json",
+          success: function(json) {
+              $("#output").empty()
+              console.log(JSON.stringify(json));
+              var list = "<ul>";
+              json.forEach(function(besoin, idx) {
+                list += " <li>" + besoin.categorie + " - "+ besoin.nom + "</li>";
+              });
+              list += "</ul>";
+              $("#output").append(list);    
+              $("#output li").css({"font-size": 20, "font-family": "Times New Roman"});
+            },
            error: function(xhr, status, errorThrown){
             alert("Problem");
             console.log("Erreur");
