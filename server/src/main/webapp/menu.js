@@ -45,8 +45,8 @@ $(document).ready(function(){
 			  $("#output").empty()
 			  console.log(JSON.stringify(json));
               var list = "<ul>";
-              json.forEach(function(Sentiment) {
-                list += " <li> Sentiment.nom </li>";
+              json.forEach(function(sentiment, idx) {
+                list += " <li>" + sentiment.nom + "</li>";
 			  });
               list += "</ul>";
 			  $("#output").append(list);	
