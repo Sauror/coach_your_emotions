@@ -19,9 +19,8 @@ import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.MediaType;
 
 import fr.iutinfo.skeleton.common.dto.QuestionDto;
-import fr.iutinfo.skeleton.common.dto.SentimentDto;
 
-@Path("/question")
+@Path("/exercice/question")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class QuestionResource {
