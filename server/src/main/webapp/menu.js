@@ -38,12 +38,20 @@ $(document).ready(function(){
 
     $("#sentiment").click(function(event){
         $.ajax({
-           url: "hevea22:8080/v1/sentiment",
+           url: "hevea22:8080/cye/sentiment",
            type: "GET",
            dataType: "json",
-           success: function(json){
-            $("<article>").text(json.title).appendTo("body");
-           },
+          success: function(json) {
+			  $("#output").empty()
+			  console.log(JSON.stringify(json));
+              var list = "<ul>";
+              json.forEach(function(Sentiment) {
+                list += " <li> Sentiment.nom </li>";
+			  });
+              list += "</ul>";
+			  $("#output").append(list);	
+              $("#output li").css({"font-size": 20, "font-family": "Times New Roman"});
+			},
            error: function(xhr, status, errorThrown){
             alert("Problem");
             console.log("Erreur");
