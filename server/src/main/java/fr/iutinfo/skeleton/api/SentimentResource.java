@@ -64,10 +64,10 @@ public class SentimentResource {
 	}
 	
 	@GET
-	@Path("./taille")
+	@Path("/categorie")
 	@Produces(MediaType.APPLICATION_JSON)
-	public int getSizeCategorie() {
-		return dao.tailleSentiment();
+	public List<String> getCategorie() {
+		return dao.getCategorie();
 		
 	}
 
