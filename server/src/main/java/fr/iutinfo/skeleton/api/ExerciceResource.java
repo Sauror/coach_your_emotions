@@ -23,6 +23,8 @@ public class ExerciceResource {
 		if (!tableExist("exercice")) {
 			dao.createExerciceTable();
 			dao.insert(new Exercice(0, "Observation VS Evaluation", "Consigne Globale", "Consigne Question"));
+			dao.insert(new Exercice(1, "Expression d'un sentiment", "Consigne GlobaleBCHSGDUHGHSFD", "Consigne QuestionDSIUDUISD"));
+			
 		}
 	}
 
