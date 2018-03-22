@@ -10,18 +10,29 @@ $(document).ready(function(){
         $("article").hide();
     	console.log("test");
 	}); 
-
+    
+    // Accordeon general
      $("#accordeon .header").click(function(event){
      if(this.nextElementSibling.style.display === "block"){
-        $("article").css("display", "none");
+        $("pres1").css("display", "none");
         this.nextElementSibling.style.display = "none";
      }
      else{
-        $("article").css("display", "none");
+        $("pres1").css("display", "none");
         this.nextElementSibling.style.display = "block";
      }
     }); 
-     
+
+     //Accordeon Presentation
+      $("#accordeonPresentation .headerPres").click(function(event){
+     if(this.nextElementSibling.style.display === "block"){
+        this.nextElementSibling.style.display = "none";
+     }
+     else{
+        this.nextElementSibling.style.display = "block";
+     }
+    }); 
+
     $("#sentiment").click(function(event){
         $.ajax({
             url: "http://localhost:8080/cye/sentiment",
