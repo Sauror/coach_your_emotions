@@ -35,4 +35,19 @@ $(document).ready(function(){
         this.nextElementSibling.style.display = "block";
      }
     }); 
+
+    $("#sentiment").click(function(event){
+        $.ajax({
+           url: "hevea22:8080/v1/sentiment",
+           type: "GET",
+           dataType: "json",
+           success: function(json){
+            $("<article>").text(json.title).appendTo("body");
+           },
+           error: function(xhr, status, errorThrown){
+            alert("Problem");
+            console.log("Erreur");
+           }
+        })
+    });
 });
