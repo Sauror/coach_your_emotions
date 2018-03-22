@@ -11,20 +11,6 @@ $(document).ready(function(){
     	console.log("test");
 	}); 
 
-	$("#exercer").click(function(){
-    	$(".pRessource").hide();
-    	$(".pExercice").show();
-    	$(".pEspace").hide();
-    	console.log("test");
-	}); 
-
-	$("#espace").click(function(){
-    	$(".pRessource").hide();
-    	$(".pExercice").hide();
-    	$(".pEspace").show();
-    	console.log("test");
-	}); 
-
      $("#accordeon .header").click(function(event){
      if(this.nextElementSibling.style.display === "block"){
         $("article").css("display", "none");
@@ -35,14 +21,7 @@ $(document).ready(function(){
         this.nextElementSibling.style.display = "block";
      }
     }); 
-/*
-    $("#sentiment").click(function(event){
-        $.getJSON("http://localhost:8080/cye/sentiment", function(result){
-            $.each(result, function(i, field){
-                $("#output").append(field + " ");
-            });
-        });
-*/
+     
     $("#sentiment").click(function(event){
         $.ajax({
             url: "http://localhost:8080/cye/sentiment",
@@ -85,7 +64,7 @@ $(document).ready(function(){
                 json.forEach(function(besoin, idx) {
                     list += " <li>" + besoin.categorie + " - "+ besoin.nom + "</li>";
                 });
-                
+
                 list += "</ul>";
                 $("#outputBesoin").append(list);    
                 $("#outputBesoin li").css({"font-size": 20, "font-family": "Times New Roman"});
