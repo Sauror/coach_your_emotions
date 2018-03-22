@@ -37,7 +37,12 @@ $(document).ready(function(){
     }); 
 
     $("#sentiment").click(function(event){
-        $.ajax({
+        $.getJSON("http://172.18.49.103:8080/cye/sentiment", function(result){
+            $.each(result, function(i, field){
+                $("#output").append(fiel + " ");
+            });
+        });
+        /*$.ajax({
            url: "http://172.18.49.103:8080/cye/sentiment",
            type: "GET",
            contentType: 'application/json;charset=utf-8',
@@ -59,7 +64,7 @@ $(document).ready(function(){
             console.log( "Error: " + errorThrown );
             console.log( "Status: " + status );
            }
-        })
+        })*/
     });
 
     $("#besoin").click(function(event){
