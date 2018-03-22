@@ -6,12 +6,12 @@ public class Sentiment {
 	
     private int id = 0;
     private String nom;
-    private String catégorie;
+    private String categorie;
 
-    public Sentiment(int id, String nom, String catégorie) {
+    public Sentiment(int id, String nom, String categorie) {
     	this.id = id;
     	this.nom = nom;
-    	this.catégorie = catégorie;
+    	this.categorie = categorie;
     }
 
     public Sentiment() {
@@ -33,25 +33,25 @@ public class Sentiment {
         this.id = id;
     }
     
-    public String getCatégorie() {
-    	return catégorie;
+    public String getCategorie() {
+    	return categorie;
     }
     
-    public void setCatégorie(String catégorie) {
-        this.catégorie = catégorie;
+    public void setCategorie(String categorie) {
+        this.categorie = categorie;
     }
     
     public void initFromDto(SentimentDto dto) {
     	this.setId(dto.getId());
     	this.setNom(dto.getNom());
-        this.setCatégorie(dto.getCatégorie());
+        this.setCategorie(dto.getCategorie());
     }
 
     public SentimentDto convertToDto() {
         SentimentDto dto = new SentimentDto();
-        this.setId(dto.getId());
-    	this.setNom(dto.getNom());
-        this.setCatégorie(dto.getCatégorie());
+        dto.setId(this.getId());
+    	dto.setNom(this.getNom());
+        dto.setCategorie(this.getCategorie());
         return dto;
     }
     

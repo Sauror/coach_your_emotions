@@ -20,7 +20,7 @@ public class BesoinResource {
 	public BesoinResource() throws SQLException {
 		if (!tableExist("besoin")) {
 			dao.createBesoinTable();
-			dao.insert(new Besoin(0, "manger", "besoins-vitaux"));
+			dao.insert(new Besoin(0, "Manger", "Besoins-vitaux"));
 		}
 	}
 
@@ -34,8 +34,8 @@ public class BesoinResource {
 	}
 
 	@GET
-	@Path("/{name}")
-	public BesoinDto getBesoin(@PathParam("nom") String nom) {
+	@Path("/{nom}")
+	public BesoinDto getBesoinByName(@PathParam("nom") String nom) {
 		Besoin besoin = dao.findByName(nom);
 		if (besoin == null) {
 			throw new WebApplicationException(404);

@@ -10,7 +10,7 @@ import org.skife.jdbi.v2.sqlobject.customizers.RegisterMapperFactory;
 import org.skife.jdbi.v2.tweak.BeanMapperFactory;
 
 public interface BesoinDao {
-	@SqlUpdate("create table besoin (id integer primary key autoincrement, nom varchar(20), categorie varchar(20)")
+	@SqlUpdate("create table besoin (id integer primary key autoincrement, nom varchar(20), categorie varchar(20))")
     void createBesoinTable();
 	
 	@SqlUpdate("insert into besoin (nom,categorie) values (:nom, :categorie)")

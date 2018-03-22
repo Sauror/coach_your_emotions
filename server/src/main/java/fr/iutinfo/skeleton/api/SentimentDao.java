@@ -7,10 +7,10 @@ import org.skife.jdbi.v2.tweak.BeanMapperFactory;
 import java.util.List;
 
 public interface SentimentDao {
-    @SqlUpdate("create table sentiment (sno integer primary key autoincrement, nom varchar(20), catégorie varchar(20))")
+    @SqlUpdate("create table sentiment (id integer primary key autoincrement, nom varchar(20), categorie varchar(20))")
     void createSentimentTable();
 
-    @SqlUpdate("insert into sentiment (nom, catégorie) values (:nom, :catégorie)")
+    @SqlUpdate("insert into sentiment (nom, categorie) values (:nom, :categorie)")
     @GetGeneratedKeys
     int insert(@BindBean() Sentiment sentiment);
 

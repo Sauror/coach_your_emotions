@@ -36,8 +36,8 @@ public class SentimentResource {
 
 	@GET
 	@Path("/{nom}")
-	public SentimentDto getSentiment(@PathParam("nom") String name) {
-		Sentiment sentiment = dao.findByName(name);
+	public SentimentDto getSentiment(@PathParam("nom") String nom) {
+		Sentiment sentiment = dao.findByName(nom);
 		if (sentiment == null) {
 			throw new WebApplicationException(404);
 		}
