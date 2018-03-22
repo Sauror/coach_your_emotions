@@ -4,7 +4,7 @@ public class SentimentDto {
 	
     private int id = 0;
     private String nom;
-    private String catégorie;
+    private String categorie;
 
     public String getNom() {
         return nom;
@@ -22,12 +22,11 @@ public class SentimentDto {
         this.id = id;
     }
 
-    public String getCatégorie() {
-        return catégorie;
+    public void setCategorie(String categorie) {
+    	this.categorie = categorie;
     }
-
-    public void setCatégorie(String catégorie) {
-        this.catégorie = catégorie;
+    
+    public String getCategorie() {
+    	return categorie;
     }
-
 }
