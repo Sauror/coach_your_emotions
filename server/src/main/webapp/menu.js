@@ -35,54 +35,62 @@ $(document).ready(function(){
         this.nextElementSibling.style.display = "block";
      }
     }); 
-
+/*
     $("#sentiment").click(function(event){
-        $.getJSON("http://172.18.49.103:8080/cye/sentiment", function(result){
+        $.getJSON("http://localhost:8080/cye/sentiment", function(result){
             $.each(result, function(i, field){
-                $("#output").append(fiel + " ");
+                $("#output").append(field + " ");
             });
         });
-        /*$.ajax({
-           url: "http://172.18.49.103:8080/cye/sentiment",
-           type: "GET",
-           contentType: 'application/json;charset=utf-8',
+*/
+    $("#sentiment").click(function(event){
+        $.ajax({
+            url: "http://localhost:8080/cye/sentiment",
+            type: "GET",
+            contentType: 'application/json;charset=utf-8',
 
-          success: function(json) {
-			  $("#output").empty()
-			  console.log("success");
-              var list = "<ul>";
-              json.forEach(function(sentiment, idx) {
-                list += " <li>" + sentiment.categorie + " - " + sentiment.nom + "</li>";
-			  });
-              list += "</ul>";
-			  $("#output").append(list);	
-              $("#output li").css({"font-size": 20, "font-family": "Times New Roman"});
-			},
+            success: function(json) {
+    			$("#outputSentiment").empty()
+    			console.log("success");
+                var list = "<ul>";
 
-           error: function(xhr, status, errorThrown){
-            alert("Problem");
-            console.log( "Error: " + errorThrown );
-            console.log( "Status: " + status );
-           }
-        })*/
+                json.forEach(function(sentiment, idx) {
+                    list += " <li>" + sentiment.categorie + " - " + sentiment.nom + "</li>";
+    			});
+
+                list += "</ul>";
+    			$("#outputSentiment").append(list);	
+                $("#outputSentiment li").css({"font-size": 20, "font-family": "Times New Roman"});
+    			},
+
+            error: function(xhr, status, errorThrown){
+                alert("Problem");
+                console.log( "Error: " + errorThrown );
+                console.log( "Status: " + status );
+            }
+        });
     });
 
     $("#besoin").click(function(event){
         $.ajax({
-           url: "http://172.18.49.103:8080/cye/besoin",
+           url: "http://localhost:8080/cye/besoin",
            type: "GET",
            dataType: "json",
-          success: function(json) {
-              $("#output").empty()
-              console.log(JSON.stringify(json));
-              var list = "<ul>";
-              json.forEach(function(besoin, idx) {
-                list += " <li>" + besoin.categorie + " - "+ besoin.nom + "</li>";
-              });
-              list += "</ul>";
-              $("#output").append(list);    
-              $("#output li").css({"font-size": 20, "font-family": "Times New Roman"});
+
+            success: function(json) {
+                $("#outputBesoin").empty()
+                console.log(JSON.stringify(json));
+                var list = "<ul>";
+                
+                json.forEach(function(besoin, idx) {
+                    list += " <li>" + besoin.categorie + " - "+ besoin.nom + "</li>";
+                });
+                
+                list += "</ul>";
+                $("#outputBesoin").append(list);    
+                $("#outputBesoin li").css({"font-size": 20, "font-family": "Times New Roman"});
             },
+
            error: function(xhr, status, errorThrown){
             alert("Problem");
             console.log( "Error: " + errorThrown );
@@ -90,4 +98,5 @@ $(document).ready(function(){
            }
         })
     });
+
 });
