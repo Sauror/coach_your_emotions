@@ -8,6 +8,8 @@ $(document).ready(function(){
 	$(".pAjoutBesoin").hide();
 	$(".pAjoutExercice").hide();
 	$(".pAjoutQuestion").hide();
+	$(".pLogin").hide();
+	$(".pSign").hide();
     });
 
     $("#AjoutSentiment").click(function(){
@@ -20,6 +22,8 @@ $(document).ready(function(){
 	$(".pAjoutExercice").hide();
 	$(".pAjoutQuestion").hide();
 	$("#sentiment").hide();
+	$(".pLogin").hide();
+	$(".pSign").hide();
     });
 
     $("#AjoutBesoin").click(function(){
@@ -31,6 +35,8 @@ $(document).ready(function(){
 	$(".pAjoutBesoin").show();
 	$(".pAjoutExercice").hide();
 	$(".pAjoutQuestion").hide();
+	$(".pLogin").hide();
+	$(".pSign").hide();
     });
 
     $("#AjoutExercice").click(function(){
@@ -42,6 +48,8 @@ $(document).ready(function(){
 	$(".pAjoutBesoin").hide();
 	$(".pAjoutExercice").show();
 	$(".pAjoutQuestion").hide();
+	$(".pLogin").hide();
+	$(".pSign").hide();
     });
 
     $("#AjoutQuestion").click(function(){
@@ -53,6 +61,8 @@ $(document).ready(function(){
 	$(".pAjoutBesoin").hide();
 	$(".pAjoutExercice").hide();
 	$(".pAjoutQuestion").show();
+	$(".pLogin").hide();
+	$(".pSign").hide();
     });
 
     $("#postSentiment").click(function(){
