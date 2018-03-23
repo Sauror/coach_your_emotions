@@ -56,10 +56,12 @@ $(document).ready(function(){
 	});
 
 	$("#postSentiment").click(function(){
+		console.log($('#categorieSentiment').val())
+		console.log($('#nomSentiment').val())
 		postSentiment(
-		$('#sentiment').val(),
-		$('#categorie').val(),
-		'http://hevea22:8080/cye/sentiment'
+		$('#nomSentiment').val(),
+		$('#categorieSentiment').val(),
+		'http://localhost:8080/cye/sentiment'
 	)});
 
 	function postSentiment(sentiment,categorie,url) {
@@ -70,7 +72,7 @@ $(document).ready(function(){
 		url : url,
 		dataType : "json",
 		data : JSON.stringify({
-			"sentiment" : sentiment,
+			"nom" : sentiment,
 			"categorie" : categorie,
 			"id" : 0
 		}),
