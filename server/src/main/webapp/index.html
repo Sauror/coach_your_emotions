@@ -6,6 +6,7 @@
     <script src="ressource.js"></script>
     <script src="exercer.js"></script>
     <script src="espace.js"></script>
+	<script src="ajoutAdmin.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <meta charset="utf-8" />
@@ -25,6 +26,7 @@
 	  <li id="ressource"><a href="#">Ressource</a></li>
 	  <li id="exercer"><a href="#">S'exercer</a></li>
 	  <li id="espace"><a href="#">Mon espace</a></li>
+		<li id="AjoutAdmin"><a href="#">EspaceAdmin</a></li>
 	</ul>
 	
 	<ul class="nav navbar-nav navbar-right">
@@ -125,6 +127,34 @@
     <div id="dEspace">
       <h1 class="pEspace">MonEspace</h1>	
       <p class="pEspace">Section à venir !</p>
+    </div>
+
+	<div id="pAjoutAdmin">
+        <button type="button" id="AjoutSentiment" class="pAjoutAdmin btn btn-lg btn-block btn-success"> Ajouter un sentiment </button>
+        <button type="button" id="AjoutBesoin" class="pAjoutAdmin btn btn-lg btn-block btn-success"> Ajouter un besoin</button>
+        <button type="button" id="AjoutExercice" class="pAjoutAdmin btn btn-lg btn-block btn-success"> Ajouter un exercice </button>
+        <button type="button" id="AjoutQuestion" class="pAjoutAdmin btn btn-lg btn-block btn-success"> Ajouter une question </button>
+    </div>
+      
+    <div id="pAjoutSentiment">
+        <input type="text" name="sentimentdb" id="sentiment" placeholder="Libellé du sentiment ?" class="pAjoutSentiment"/>
+        <input type="text" name="sentimentdb" id="categorie" placeholder="Catégorie ?" class="pAjoutSentiment"/>
+        <button type="button" id="postSentiment" class="pAjoutSentiment btn btn-lg btn-block btn-success"> Ajouter le sentiment</button>
+    </div>
+      
+    <div id="pAjoutBesoin">
+        <input type="text" name="besoindb" id="besoin" placeholder="Libellé du besoin ?" class="pAjoutBesoin"/>
+        <input type="text" name="besoindb" id="categorie" placeholder="Catégorie ?" class="pAjoutBesoin"/>
+    </div>
+      
+    <div id="pAjoutExercice">
+        <input type="text" name="exercicedb" id="besoin" placeholder="Libellé du besoin ?" class="pAjoutExercice"/>
+        <input type="text" name="exercicedb" id="categorie" placeholder="Catégorie ?" class="pAjoutExercice"/>
+    </div>
+      
+    <div id="pAjoutQuestion">
+        <input type="text" name="questiondb" id="besoin" placeholder="Libellé du besoin ?" class="pAjoutQuestion"/>
+        <input type="text" name="questiondb" id="categorie" placeholder="Catégorie ?" class="pAjoutQuestion"/>
     </div>
     
   </body>

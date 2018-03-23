@@ -3,6 +3,11 @@ $(document).ready(function(){
     	$(".pRessource").hide();
     	$(".pExercice").hide();
     	$(".pEspace").show();
+		$(".pAjoutAdmin").hide();
+		$(".pAjoutSentiment").hide();
+		$(".pAjoutBesoin").hide();
+		$(".pAjoutExercice").hide();
+		$(".pAjoutQuestion").hide();
     	console.log("test");
     }); 
 })

@@ -2,12 +2,22 @@ $(document).ready(function(){
     $(".pRessource").hide();
     $(".pExercice").hide();
     $(".pEspace").hide();
+	$(".pAjoutAdmin").hide();
+	$(".pAjoutSentiment").hide();
+	$(".pAjoutBesoin").hide();
+	$(".pAjoutExercice").hide();
+	$(".pAjoutQuestion").hide();
 
     $("#ressource").click(function(){
     	$(".pRessource").show();
     	$(".pExercice").hide();
     	$(".pEspace").hide();
         $("article").hide();
+		$(".pAjoutAdmin").hide();
+		$(".pAjoutSentiment").hide();
+		$(".pAjoutBesoin").hide();
+		$(".pAjoutExercice").hide();
+		$(".pAjoutQuestion").hide();
     	console.log("test");
     }); 
 

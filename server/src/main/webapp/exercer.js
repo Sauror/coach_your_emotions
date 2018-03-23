@@ -3,6 +3,11 @@ $(document).ready(function(){
     	$(".pRessource").hide();
     	$(".pExercice").show();
     	$(".pEspace").hide();
+		$(".pAjoutAdmin").hide();
+		$(".pAjoutSentiment").hide();
+		$(".pAjoutBesoin").hide();
+		$(".pAjoutExercice").hide();
+		$(".pAjoutQuestion").hide();
     	console.log("test");
         $.ajax({
             url: "http://localhost:8080/cye/exercice",
