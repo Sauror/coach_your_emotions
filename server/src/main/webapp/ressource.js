@@ -13,11 +13,6 @@ $(document).ready(function(){
     	$(".pExercice").hide();
     	$(".pEspace").hide();
         $("article").hide();
-		$(".pAjoutAdmin").hide();
-		$(".pAjoutSentiment").hide();
-		$(".pAjoutBesoin").hide();
-		$(".pAjoutExercice").hide();
-		$(".pAjoutQuestion").hide();
     	console.log("test");
     }); 
 
@@ -77,7 +72,7 @@ $(document).ready(function(){
                         list += "<section class=\"pRessource\"> <h3 class=\"SentimentParCat\">" + sentiment.categorie + "</h3>";
                         categorie = sentiment.categorie;
                     } 
-                    list += "<article style=\"display: none\">" +sentiment.nom+"</article>";
+                    list += "<article style=\"display: none\">- " +sentiment.nom+"</article>";
                 });
 
                 list += "</section>";
@@ -123,7 +118,7 @@ $(document).ready(function(){
                         list += "<section class=\"pRessource\"> <h3 class=\"BesoinParCat\">" + besoin.categorie + "</h3>";
                         categorie = besoin.categorie;
                     } 
-                    list += "<article style=\"display: none\">" +besoin.nom+"</article>";
+                    list += "<article style=\"display: none\">- " +besoin.nom+"</article>";
                 });
 
                 list += "</section>";
