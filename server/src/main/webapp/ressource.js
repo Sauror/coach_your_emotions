@@ -9,6 +9,7 @@ $(document).ready(function(){
     $(".pAjoutQuestion").hide();
     $(".pLogin").hide();
     $(".pSign").hide();
+    $("#pDeleteSentiment").hide();
 
     $("#ressource").click(function(){
     	$(".pRessource").show();
