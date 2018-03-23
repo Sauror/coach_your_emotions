@@ -13,6 +13,7 @@ $(document).ready(function(){
     $("#ressource").click(function(){
     	$(".pRessource").show();
     	$(".pExercice").hide();
+    	$(".pAjoutAdmin").hide();
     	$(".pEspace").hide();
         $("article").hide();
     	console.log("test");

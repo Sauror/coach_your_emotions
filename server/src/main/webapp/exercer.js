@@ -16,6 +16,7 @@ $(document).ready(function(){
     	$(".pLogin").hide();
     	$(".pSign").hide();
     	$(".pEspace").hide();
+    	$(".pAjoutAdmin").hide();
     	console.log("test");
         $.ajax({
             url: "http://localhost:8080/cye/exercice",
