@@ -53,16 +53,16 @@ $(document).ready(function(){
     });
 
     $("#AjoutQuestion").click(function(){
-	$(".pRessource").hide();
-    	$(".pExercice").hide();
-    	$(".pEspace").hide();
-	$(".pAjoutAdmin").hide();
-	$(".pAjoutSentiment").hide();
-	$(".pAjoutBesoin").hide();
-	$(".pAjoutExercice").hide();
-	$(".pAjoutQuestion").show();
-	$(".pLogin").hide();
-	$(".pSign").hide();
+		$(".pRessource").hide();
+		$(".pExercice").hide();
+		$(".pEspace").hide();
+		$(".pAjoutAdmin").hide();
+		$(".pAjoutSentiment").hide();
+		$(".pAjoutBesoin").hide();
+		$(".pAjoutExercice").hide();
+		$(".pAjoutQuestion").show();
+		$(".pLogin").hide();
+		$(".pSign").hide();
     });
 
     $("#postSentiment").click(function(){
@@ -153,6 +153,7 @@ $(document).ready(function(){
 		});
 
 		$("#postQuestion").click(function(){
+			console.log("ICICI");
 		    postQuestion(
 			$('#idExo').val(),
 			$('#phraseQuestion').val(),
