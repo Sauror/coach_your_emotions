@@ -14,14 +14,14 @@ $(document).ready(function(){
 
     $("#AjoutSentiment").click(function(){
 	$(".pRessource").hide();
-    	$(".pExercice").hide();
-    	$(".pEspace").hide();
+    $(".pExercice").hide();
+   	$(".pEspace").hide();
 	$(".pAjoutAdmin").hide();
 	$(".pAjoutSentiment").show();
 	$(".pAjoutBesoin").hide();
 	$(".pAjoutExercice").hide();
 	$(".pAjoutQuestion").hide();
-	$("#sentiment").hide();
+	//$("#sentiment").hide();
 	$(".pLogin").hide();
 	$(".pSign").hide();
     });
@@ -158,7 +158,7 @@ $(document).ready(function(){
 			$('#phraseQuestion').val(),
 			$('#correctionNon').val(),
 			$('#correctionOui').val(),
-			'http://localhost:8080/cye/besoin'
+			'http://localhost:8080/cye/question'
 		    )});
 
 		function postQuestion(id,phraseQ,cNon, cOui,url) {
