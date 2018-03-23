@@ -187,4 +187,28 @@ $(document).ready(function(){
 			 }
 		    });
 		}
+
+
+		$("#deleteSentiment").click(function(){
+			var chaine = 'http://localhost:8080/cye/sentiment/' + $('#idExo').val();
+		    deleteSentiment(chaine);
+		});
+
+		function deleteSentiment(url){
+			$.ajax({
+			type : 'DELETE',
+			contentType : 'application/json',
+			url : url
+			dataType : "json"
+			}),
+			success : function(data, textStatus, jqXHR) {
+			    //afficheUser(data);
+			},
+			error : function(jqXHR, textStatus, errorThrown) {
+			    console.log('postUser error: ' + textStatus);
+			 }
+		    });
+		}
+
+    
 });
