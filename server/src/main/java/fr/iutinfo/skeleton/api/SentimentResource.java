@@ -19,7 +19,6 @@ public class SentimentResource {
 	private static SentimentDao dao = getDbi().open(SentimentDao.class);
 
 	public SentimentResource() throws SQLException {
-		dao.dropSentimentTable();
 		if (!tableExist("sentiment")) {
 			dao.createSentimentTable();
 			dao.insert(new Sentiment(0, "Content", "Content"));
@@ -28,7 +27,6 @@ public class SentimentResource {
 			dao.insert(new Sentiment(3, "Las", "Fatigué"));
 			dao.insert(new Sentiment(4, "Endormi", "Fatigué"));
 			dao.insert(new Sentiment(5, "Démoralisé", "Triste"));
-			
 		}
 	}
 

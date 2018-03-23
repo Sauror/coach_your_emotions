@@ -4,7 +4,6 @@ public class QuestionDto {
 	private int id =0;
 	private int idExo;
 	private String question;
-	private String reponsesAttendue;
 	private String correctionOui;
 	private String correctionNon;
 	public int getId() {
@@ -24,12 +23,6 @@ public class QuestionDto {
 	}
 	public void setQuestion(String question) {
 		this.question = question;
-	}
-	public String getReponsesAttendue() {
-		return reponsesAttendue;
-	}
-	public void setReponsesAttendue(String reponsesAttendue) {
-		this.reponsesAttendue = reponsesAttendue;
 	}
 	public String getCorrectionOui() {
 		return correctionOui;

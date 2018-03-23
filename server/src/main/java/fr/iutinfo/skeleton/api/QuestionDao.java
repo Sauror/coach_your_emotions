@@ -11,10 +11,10 @@ import org.skife.jdbi.v2.sqlobject.customizers.RegisterMapperFactory;
 import org.skife.jdbi.v2.tweak.BeanMapperFactory;
 
 public interface QuestionDao {
-	@SqlUpdate("create table question (id integer primary key autoincrement, idExo integer, question varchar(100), reponseAttendue varchar(3), correctionOui varchar(200), correctionNon varchar(200), foreign key(idExo) references exercice(id))")
+	@SqlUpdate("create table question (id integer primary key autoincrement, idExo integer, question varchar(100), correctionOui varchar(200), correctionNon varchar(200), foreign key(idExo) references exercice(id))")
     void createQuestionTable();
 	
-	@SqlUpdate("insert into question (idExo, question,reponseAttendue, correctionOui, correctionNon) values (:idExo, :question, :reponseAttendue, :correctionOui, :correctionNon)")
+	@SqlUpdate("insert into question (idExo, question, correctionOui, correctionNon) values (:idExo, :question, :correctionOui, :correctionNon)")
     @GetGeneratedKeys
     int insert(@BindBean() Question question);
 	

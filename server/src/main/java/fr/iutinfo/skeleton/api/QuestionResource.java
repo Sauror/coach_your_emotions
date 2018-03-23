@@ -31,10 +31,10 @@ public class QuestionResource {
 		dao.dropQuestionTable();
 		if (!tableExist("question")) {
 			dao.createQuestionTable();
-			dao.insert(new Question(1,1,"Question 1?", "Rep attendue","correction oui","correction non"));
-			dao.insert(new Question(2,1,"Question 2?", "Rep attendue","correction oui","correction non"));
-			dao.insert(new Question(3,2,"Question 3?", "Rep attendue","correction oui","correction non"));
-			dao.insert(new Question(4,1,"Question 4?", "Rep attendue","correction oui","correction non"));
+			dao.insert(new Question(1,1,"Question 1?","Pas vraiment !","Effectivem"));
+			dao.insert(new Question(2,1,"Question 2?","correction oui","Perdu ! En effet ..."));
+			dao.insert(new Question(3,2,"Question 3?","correction oui","correction non"));
+			dao.insert(new Question(4,1,"Question 4?","correction oui","correction non"));
 		}
 	}
 
