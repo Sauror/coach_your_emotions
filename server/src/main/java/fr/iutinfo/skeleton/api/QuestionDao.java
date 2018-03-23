@@ -26,6 +26,10 @@ public interface QuestionDao {
     @RegisterMapperFactory(BeanMapperFactory.class)
     List<Question> search(@Bind("question") String question);
 
+	@SqlQuery("select * from question where idExo = :idExo")
+    @RegisterMapperFactory(BeanMapperFactory.class)
+    List<Question> searchQuestionFromExercice(@Bind("idExo") int idExo);
+	
 	@SqlUpdate("drop table if exists question")
     void dropQuestionTable();
 

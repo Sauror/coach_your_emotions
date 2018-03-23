@@ -20,21 +20,24 @@ import javax.ws.rs.core.MediaType;
 
 import fr.iutinfo.skeleton.common.dto.QuestionDto;
 
-@Path("/exercice/question")
+@Path("/question")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class QuestionResource {
-	
+
 	private static QuestionDao dao = getDbi().open(QuestionDao.class);
 
 	public QuestionResource() throws SQLException {
 		dao.dropQuestionTable();
 		if (!tableExist("question")) {
 			dao.createQuestionTable();
-			dao.insert(new Question(0,1,"Question ?", "Rep attendue","correction oui","correction non"));
+			dao.insert(new Question(1,1,"Question 1?", "Rep attendue","correction oui","correction non"));
+			dao.insert(new Question(2,1,"Question 2?", "Rep attendue","correction oui","correction non"));
+			dao.insert(new Question(3,2,"Question 3?", "Rep attendue","correction oui","correction non"));
+			dao.insert(new Question(4,1,"Question 4?", "Rep attendue","correction oui","correction non"));
 		}
 	}
-	
+
 	@POST
 	public QuestionDto createQuestion(QuestionDto dto) {
 		Question question = new Question();
@@ -43,9 +46,9 @@ public class QuestionResource {
 		dto.setId(id);
 		return dto;
 	}
-	
+
 	@GET
-	@Path("/{id}")
+	@Path("{id}")
 	public QuestionDto getQuestion(@PathParam("id") int id) {
 		Question question = dao.findById(id);
 		if (question == null) {
@@ -53,7 +56,15 @@ public class QuestionResource {
 		}
 		return question.convertToDto();
 	}
-	
+
+	@GET
+	@Path("/exoid/{id}")
+	public List<QuestionDto> getQuestionFromExercice(@PathParam("id") int id, @QueryParam("q") String query) {
+		List<Question> questions;
+		questions = dao.searchQuestionFromExercice(id);
+		return questions.stream().map(Question::convertToDto).collect(Collectors.toList());
+	}
+
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<QuestionDto> getAllQuestions(@QueryParam("q") String query) {
@@ -67,11 +78,10 @@ public class QuestionResource {
 	}
 
 	@DELETE
-    @Path("/{id}")
-    public void deleteQuestion(@PathParam("id") int id) {
-        dao.delete(id);
-    }
+	@Path("/{id}")
+	public void deleteQuestion(@PathParam("id") int id) {
+		dao.delete(id);
+	}
 
 }
-	
-	
+

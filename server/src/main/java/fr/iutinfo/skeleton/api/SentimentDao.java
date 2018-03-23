@@ -36,9 +36,5 @@ public interface SentimentDao {
     @RegisterMapperFactory(BeanMapperFactory.class)
     Sentiment findById(@Bind("id") int id);
     
-    @SqlQuery("select distinct categorie from sentiment")
-    @RegisterMapperFactory(BeanMapperFactory.class)
-    List<String> getCategorie();
-    
     void close();
 }

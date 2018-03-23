@@ -61,15 +61,6 @@ public class SentimentResource {
 		}
 		return sentiments.stream().map(Sentiment::convertToDto).collect(Collectors.toList());
 	}
-	
-	//PB ICI
-	@GET
-	//@Path("/categorie")
-	@Produces(MediaType.APPLICATION_JSON)
-	public List<String> getCategorie() {
-		return dao.getCategorie();
-		
-	}
 
 	@DELETE
     @Path("/{id}")
