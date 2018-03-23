@@ -138,25 +138,31 @@
         <button type="button" id="AjoutQuestion" class="pAjoutAdmin btn btn-lg btn-block btn-success"> Ajouter une question </button>
     </div>
       
-    <div id="pAjoutSentiment">
-        <input type="text" name="sentimentdb" id="nomSentiment" placeholder="Libellé du sentiment ?" class="pAjoutSentiment"/>
-        <input type="text" name="sentimentdb" id="categorieSentiment" placeholder="Catégorie ?" class="pAjoutSentiment"/>
+   <div id="pAjoutSentiment">
+        <input type="text" name="sentimentdb" id="sentiment" placeholder="Libellé du sentiment ?" class="pAjoutSentiment"/>
+        <input type="text" name="sentimentdb" id="categorie" placeholder="Catégorie ?" class="pAjoutSentiment"/>
         <button type="button" id="postSentiment" class="pAjoutSentiment btn btn-lg btn-block btn-success"> Ajouter le sentiment</button>
     </div>
       
     <div id="pAjoutBesoin">
-        <input type="text" name="besoindb" id="besoin" placeholder="Libellé du besoin ?" class="pAjoutBesoin"/>
-        <input type="text" name="besoindb" id="categorie" placeholder="Catégorie ?" class="pAjoutBesoin"/>
+        <input type="text" name="besoindb" id="nomBesoin" placeholder="Libellé du besoin ?" class="pAjoutBesoin"/>
+        <input type="text" name="besoindb" id="categorieBesoin" placeholder="Catégorie ?" class="pAjoutBesoin"/>
+        <button type="button" id="postBesoin" class="pAjoutBesoin btn btn-lg btn-block btn-success"> Ajouter le besoin</button>
     </div>
       
     <div id="pAjoutExercice">
-        <input type="text" name="exercicedb" id="besoin" placeholder="Libellé du besoin ?" class="pAjoutExercice"/>
-        <input type="text" name="exercicedb" id="categorie" placeholder="Catégorie ?" class="pAjoutExercice"/>
+        <input type="text" name="exercicedb" id="nomExercice" placeholder="nom de l'exercice" class="pAjoutExercice"/>
+        <input type="text" name="exercicedb" id="consigneGlobale" placeholder="consigne de l'exercice" class="pAjoutExercice"/>
+        <input type="text" name="exercicedb" id="consigneQuestion" placeholder="sous consigne" class="pAjoutExercice"/>
+         <button type="button" id="postExercice" class="pAjoutExercice btn btn-lg btn-block btn-success"> Ajouter l'exercice'</button>
     </div>
       
     <div id="pAjoutQuestion">
-        <input type="text" name="questiondb" id="besoin" placeholder="Libellé du besoin ?" class="pAjoutQuestion"/>
-        <input type="text" name="questiondb" id="categorie" placeholder="Catégorie ?" class="pAjoutQuestion"/>
+        <input type="text" name="questiondb" id="idExo" placeholder="numero de l'exercice" class="pAjoutQuestion"/>
+        <input type="text" name="questiondb" id="phraseQuestion" placeholder="question" class="pAjoutQuestion"/>
+        <input type="text" name="questiondb" id="correctionNon" placeholder="Correction pour la mauvaise réponse" class="pAjoutQuestion"/>
+        <input type="text" name="questiondb" id="correctionOui" placeholder="Phrase de réussite" class="pAjoutQuestion"/>
+        <button type="button" id="postQuestion" class="pAjoutQuestion btn btn-lg btn-block btn-success"> Ajouter la question</button>
     </div>
     
   </body>

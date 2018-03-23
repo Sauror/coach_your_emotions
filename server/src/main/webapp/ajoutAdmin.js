@@ -83,6 +83,95 @@ $(document).ready(function(){
 			console.log('postUser error: ' + textStatus);
 		}
 	});
+
+	$("#postBesoin").click(function(){
+		console.log($('#categorieBesoin').val())
+		console.log($('#nomBesoin').val())
+		postBesoin(
+		$('#nomBesoin').val(),
+		$('#categorieBesoin').val(),
+		'http://localhost:8080/cye/besoin'
+	)});
+
+	function postBesoin(besoin,categorie,url) {
+	console.log("postSentiment " + url)
+	$.ajax({
+		type : 'POST',
+		contentType : 'application/json',
+		url : url,
+		dataType : "json",
+		data : JSON.stringify({
+			"nom" : besoin,
+			"categorie" : categorie,
+			"id" : 0
+		}),
+		success : function(data, textStatus, jqXHR) {
+			//afficheUser(data);
+		},
+		error : function(jqXHR, textStatus, errorThrown) {
+			console.log('postUser error: ' + textStatus);
+		}
+	});
+
+	$("#postExercice").click(function(){
+		postExercice(
+		$('#nomExercice').val(),
+		$('#consigneGlobale').val(),
+		$('#consigneQuestion').val(),
+		'http://localhost:8080/cye/exercice'
+	)});
+
+	function postExercice(nom,consigneGlobale,consigneQuestion,url) {
+	console.log("postExercice " + url)
+	$.ajax({
+		type : 'POST',
+		contentType : 'application/json',
+		url : url,
+		dataType : "json",
+		data : JSON.stringify({
+			"nom" : nom,
+			"cg" : consigneGlobale,
+			"cq" : consigneQuestion,
+			"id" : 0
+		}),
+		success : function(data, textStatus, jqXHR) {
+			//afficheUser(data);
+		},
+		error : function(jqXHR, textStatus, errorThrown) {
+			console.log('postUser error: ' + textStatus);
+		}
+	});
+
+	$("#postQuestion").click(function(){
+		postQuestion(
+		$('#idExo').val(),
+		$('#phraseQuestion').val(),
+		$('#correctionNon').val(),
+		$('#correctionOui').val(),
+		'http://localhost:8080/cye/besoin'
+	)});
+
+	function postQuestion(id,phraseQ,cNon, cOui,url) {
+	console.log("postQuestion " + url)
+	$.ajax({
+		type : 'POST',
+		contentType : 'application/json',
+		url : url,
+		dataType : "json",
+		data : JSON.stringify({
+			"idExo" : id,
+			"question" : phraseQ,
+			"correctionNon" : cNon,
+			"correctionOui" : cOui,
+			"id" : 0
+		}),
+		success : function(data, textStatus, jqXHR) {
+			//afficheUser(data);
+		},
+		error : function(jqXHR, textStatus, errorThrown) {
+			console.log('postUser error: ' + textStatus);
+		}
+	});
 }
 
 
