@@ -31,7 +31,7 @@ $(document).ready(function(){
 	else{
             this.nextElementSibling.style.display = "block";
 	}
-    }); 
+    });  
 
     $("#sentiment").click(function(event){
         var categorie = "";
@@ -42,20 +42,51 @@ $(document).ready(function(){
             contentType: 'application/json;charset=utf-8',
 
             success: function(json) {
-    		$("#outputSentiment").empty()
+    		$("#accordeonSentiment").empty()
     		console.log("success");
-                var list = "<ul>";
+                var list = "<section class=\"pRessource\">";
 
                 json.forEach(function(sentiment, idx) {                    
                     if(categorie !== sentiment.categorie){
-                        list += " <h3 class=\"SentimentParCat\">" + sentiment.categorie + "</h3>";
-                        categorie = sentiment.categorie
+                        list += "<h3 class=\"SentimentParCat\">" + sentiment.categorie + "<h3>";
+                        categorie = sentiment.categorie;
                     }
                 });                
-
-                list += "</ul>";
-    		$("#outputSentiment").append(list);	
+                list += "</section>";
+    		$("#accordeonSentiment").append(list);	
     	    },
+
+            error: function(xhr, status, errorThrown){
+                alert("Problem");
+                console.log( "Error: " + errorThrown );
+                console.log( "Status: " + status );
+            }
+        });
+    });
+
+    $(".SentimentParCat").click(function(event){
+        var categorie = "";
+        $.ajax({
+            url: "http://localhost:8080/cye/sentiment",
+            type: "GET",
+            contentType: 'application/json;charset=utf-8',
+
+            success: function(json) {
+            $(".SentimentParCat").empty()
+            console.log("success");
+                var list = "";
+
+                json.forEach(function(sentiment, idx) {                    
+                    if(categorie !== sentiment.categorie){
+                        list += "</h3><article>" + sentiment.nom + "<article>";
+                        categorie = sentiment.categorie;
+                    } else {
+                        list += "<article>" + sentiment.nom +"</article>";
+                    }
+                });                
+                
+            $(".SentimentParCat").append(list);  
+            },
 
             error: function(xhr, status, errorThrown){
                 alert("Problem");
