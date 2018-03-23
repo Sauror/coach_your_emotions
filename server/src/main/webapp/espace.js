@@ -8,6 +8,8 @@ $(document).ready(function(){
 		$(".pAjoutBesoin").hide();
 		$(".pAjoutExercice").hide();
 		$(".pAjoutQuestion").hide();
+		$(".pLogin").hide();
+		$(".pSign").hide();
     	console.log("test");
     }); 
 })

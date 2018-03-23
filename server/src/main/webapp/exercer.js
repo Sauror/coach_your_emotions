@@ -13,6 +13,8 @@ $(document).ready(function(){
     $("#exercer").click(function(){
     	$(".pRessource").hide();
     	$(".pExercice").show();
+    	$(".pLogin").hide();
+    	$(".pSign").hide();
     	$(".pEspace").hide();
     	console.log("test");
         $.ajax({
@@ -70,6 +72,8 @@ $(document).ready(function(){
 		
 	$("#formOutPut").on("click", ".btn1",function(){
 		$(".pRessource").hide();
+		$(".pLogin").hide();
+		$(".pSign").hide();
     	$(".pExercice").show();
     	$(".pEspace").hide();
     	console.log("test");

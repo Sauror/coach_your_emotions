@@ -1,0 +1,14 @@
+$(document).ready(function(){
+    $("#sign").click(function(){
+    	$(".pRessource").hide();
+    	$(".pExercice").hide();
+    	$(".pEspace").hide();
+	$(".pAjoutAdmin").hide();
+	$(".pAjoutSentiment").hide();
+	$(".pAjoutBesoin").hide();
+	$(".pAjoutExercice").hide();
+	$(".pAjoutQuestion").hide();
+	$(".pLogin").hide();
+	$(".pSign").show();
+    });
+});

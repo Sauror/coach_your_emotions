@@ -32,8 +32,8 @@
 	</ul>
 	
 	<ul class="nav navbar-nav navbar-right">
-	  <li id="sign"><a href="#"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
-	  <li id="login"><a href="#"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+	  <li id="sign"><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+	  <li id="login"><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 	</ul>
 	
       </div>
@@ -139,8 +139,8 @@
     </div>
       
    <div id="pAjoutSentiment">
-        <input type="text" name="sentimentdb" id="sentiment" placeholder="Libellé du sentiment ?" class="pAjoutSentiment"/>
-        <input type="text" name="sentimentdb" id="categorie" placeholder="Catégorie ?" class="pAjoutSentiment"/>
+        <input type="text" name="sentimentdb" id="nomSentiment" placeholder="Libellé du sentiment ?" class="pAjoutSentiment"/>
+        <input type="text" name="sentimentdb" id="categorieSentiment" placeholder="Catégorie ?" class="pAjoutSentiment"/>
         <button type="button" id="postSentiment" class="pAjoutSentiment btn btn-lg btn-block btn-success"> Ajouter le sentiment</button>
     </div>
       
@@ -164,6 +164,22 @@
         <input type="text" name="questiondb" id="correctionOui" placeholder="Phrase de réussite" class="pAjoutQuestion"/>
         <button type="button" id="postQuestion" class="pAjoutQuestion btn btn-lg btn-block btn-success"> Ajouter la question</button>
     </div>
+    
+    <div id="pLogin">
+        <input type="text" name="user" id="userLogin" placeholder="Login" class="pLogin"/>
+        <input type="password" name="password" id="passwdLogin" placeholder="Mot de Passe" class="pLogin"/>
+        <br/>
+        <button id="login" class="pLogin">Login</button>
+        <br/>
+    </div>
+    
+    <div class="pSign">
+            <h1>Utilisateur :</h1>
+            <input type="text" name="userdb" id="user" placeholder="Nom ?" class="pSign"/>
+            <input type="text" name="user" id="alias" placeholder="Surnom ?" class="pSign"/>
+            <input type="text" name="email" id="email" placeholder="Email ?" class="pSign"/>
+            <input type="password" name="user" id="passwd" placeholder="Mot de passe ?" class="pSign"/>
+          </div>
     
   </body>
 </html>

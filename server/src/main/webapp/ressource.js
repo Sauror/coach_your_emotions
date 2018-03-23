@@ -7,6 +7,8 @@ $(document).ready(function(){
 	$(".pAjoutBesoin").hide();
 	$(".pAjoutExercice").hide();
 	$(".pAjoutQuestion").hide();
+	$(".pLogin").hide();
+	$(".pSign").hide();
 
     $("#ressource").click(function(){
     	$(".pRessource").show();
