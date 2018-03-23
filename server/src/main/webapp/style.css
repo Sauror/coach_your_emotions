@@ -56,6 +56,10 @@ h3 {
     margin-left: 1%;
 }
 
+#accordeonBesoin {
+    margin-left: 1%;
+}
+
 #accordeonSentiment .SentimentParCat{
    cursor: pointer;
 }

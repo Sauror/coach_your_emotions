@@ -15,10 +15,12 @@ $(document).ready(function(){
     $("#accordeon .header").click(function(event){
 	if(this.nextElementSibling.style.display === "block"){
             $("article").css("display", "none");
+            $(".divAccordeonSB").css("display", "none");
             this.nextElementSibling.style.display = "none";
 	}
 	else{
             $("article").css("display", "none");
+            $(".divAccordeonSB").css("display", "none");
             this.nextElementSibling.style.display = "block";
 	}
     }); 
@@ -31,7 +33,16 @@ $(document).ready(function(){
 	else{
             this.nextElementSibling.style.display = "block";
 	}
-    });  
+    }); 
+
+    $("#accordeonSentiment .SentimentParCat").on("click",(function(event){
+    if(this.nextElementSibling.style.display === "block"){
+            this.nextElementSibling.style.display = "none";
+    }
+    else{
+            this.nextElementSibling.style.display = "block";
+    }
+    })); 
 
     $("#sentiment").click(function(event){
         var categorie = "";
@@ -44,16 +55,29 @@ $(document).ready(function(){
             success: function(json) {
     		$("#accordeonSentiment").empty()
     		console.log("success");
-                var list = "<section class=\"pRessource\">";
+            /*    var list = "";
+                var i = 0;
 
-                json.forEach(function(sentiment, idx) {                    
+                json.forEach(function(sentiment, idx) {                
                     if(categorie !== sentiment.categorie){
-                        list += "<h3 class=\"SentimentParCat\">" + sentiment.categorie + "<h3>";
+                        list += "<section class=\"pRessource\"><h3 class=\"SentimentParCat\">" + sentiment.categorie + "</h3>";
                         categorie = sentiment.categorie;
-                    }
-                });                
+                    } 
+                    list += "<article>" +sentiment.nom+"</article>";
+                });
                 list += "</section>";
     		$("#accordeonSentiment").append(list);	
+            */
+            var list = new Map();
+
+            json.forEach(function(sentiment, idx){
+                list.set(sentiment.categorie, sentiment.nom);
+            });
+
+            
+
+            $("#accordeonSentiment").append(list);  
+
     	    },
 
             error: function(xhr, status, errorThrown){
@@ -64,56 +88,28 @@ $(document).ready(function(){
         });
     });
 
-    $(".SentimentParCat").click(function(event){
-        var categorie = "";
-        $.ajax({
-            url: "http://localhost:8080/cye/sentiment",
-            type: "GET",
-            contentType: 'application/json;charset=utf-8',
-
-            success: function(json) {
-            $(".SentimentParCat").empty()
-            console.log("success");
-                var list = "";
-
-                json.forEach(function(sentiment, idx) {                    
-                    if(categorie !== sentiment.categorie){
-                        list += "</h3><article>" + sentiment.nom + "<article>";
-                        categorie = sentiment.categorie;
-                    } else {
-                        list += "<article>" + sentiment.nom +"</article>";
-                    }
-                });                
-                
-            $(".SentimentParCat").append(list);  
-            },
-
-            error: function(xhr, status, errorThrown){
-                alert("Problem");
-                console.log( "Error: " + errorThrown );
-                console.log( "Status: " + status );
-            }
-        });
-    });
-
     $("#besoin").click(function(event){
+        var categorie = "";
         $.ajax({
             url: "http://localhost:8080/cye/besoin",
             type: "GET",
             dataType: "json",
 
             success: function(json) {
-                $("#outputBesoin").empty()
+                $("#accordeonBesoin").empty()
                 console.log(JSON.stringify(json));
-                var list = "<ul>";
-                
-                json.forEach(function(besoin, idx) {
-                    list += " <li>" + besoin.categorie + " - "+ besoin.nom + "</li>";
-                });
+                 var list = "<section class=\"pRessource\">";
 
-                list += "</ul>";
-                $("#outputBesoin").append(list);    
-                $("#outputBesoin li").css({"font-size": 20, "font-family": "Times New Roman"});
+                json.forEach(function(besoin, idx) {                    
+                    if(categorie !== besoin.categorie){
+                        list += "<h3 class=\"SentimentParCat\">" + besoin.categorie + "</h3><article>" + besoin.nom + "<article>";
+                        categorie = besoin.categorie;
+                    } else {
+                        list += "<article>" + besoin.nom +"</article>";
+                    }
+                });                
+                list += "</section>";
+                $("#accordeonBesoin").append(list);    
             },
 
             error: function(xhr, status, errorThrown){
