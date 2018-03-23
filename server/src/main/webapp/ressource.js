@@ -2,13 +2,13 @@ $(document).ready(function(){
     $(".pRessource").hide();
     $(".pExercice").hide();
     $(".pEspace").hide();
-	$(".pAjoutAdmin").hide();
-	$(".pAjoutSentiment").hide();
-	$(".pAjoutBesoin").hide();
-	$(".pAjoutExercice").hide();
-	$(".pAjoutQuestion").hide();
-	$(".pLogin").hide();
-	$(".pSign").hide();
+    $(".pAjoutAdmin").hide();
+    $(".pAjoutSentiment").hide();
+    $(".pAjoutBesoin").hide();
+    $(".pAjoutExercice").hide();
+    $(".pAjoutQuestion").hide();
+    $(".pLogin").hide();
+    $(".pSign").hide();
 
     $("#ressource").click(function(){
     	$(".pRessource").show();
@@ -43,18 +43,34 @@ $(document).ready(function(){
 	}
     }); 
 
-    $("#accordeonSentiment .SentimentParCat").on("click",(function(event){
-    if(this.nextElementSibling.style.display === "block"){
-            this.nextElementSibling.style.display = "none";
-    }
-    else{
-            this.nextElementSibling.style.display = "block";
-    }
-    })); 
+    $("#accordeonBesoin").on("click", ".BesoinParCat", function(event){
+                    event.preventDefault();
+                    var articles = $(this.parentNode).find("article");
+                    console.log(articles);
+                    if ( articles.css("display") === "none" ) {
+                        articles.css("display", "block");
+                    }
+                    else {
+                        articles.css("display", "none");
+                    }
+        });    
+
+    $("#accordeonSentiment").on("click", ".SentimentParCat", function(event){
+                    event.preventDefault();
+                    var articles = $(this.parentNode).find("article");
+                    console.log(articles.css("display"));
+                    if ( articles.css("display") === "none" ) {
+                        console.log("1");
+                        articles.css("display", "block");
+                    }
+                    else if(articles.css("display") === "block"){
+                        console.log("2");
+                        articles.css("display", "none");
+                    }
+        }); 
 
     $("#sentiment").click(function(event){
         var categorie = "";
-
         $.ajax({
             url: "http://localhost:8080/cye/sentiment",
             type: "GET",
@@ -82,12 +98,7 @@ $(document).ready(function(){
 
     		$("#accordeonSentiment").append(list);
 		
-		$("#accordeonSentiment").on("click", ".SentimentParCat", function(event){
-                    event.preventDefault();
-                    var articles = $(this.parentNode).find("article");
-                    console.log(articles);
-                    articles.toggle();
-		}); 
+		
 
     	    },
 
@@ -109,7 +120,7 @@ $(document).ready(function(){
             success: function(json) {
                 $("#accordeonBesoin").empty()
                 console.log("success");
-        var list = "";
+		var list = "";
                 var i = 0;
 
                 json.forEach(function(besoin, idx) {              
@@ -126,14 +137,9 @@ $(document).ready(function(){
 
                 list += "</section>";
 
-            $("#accordeonBesoin").append(list);
-        
-        $("#accordeonBesoin").on("click", ".BesoinParCat", function(event){
-                    event.preventDefault();
-                    var articles = $(this.parentNode).find("article");
-                    console.log(articles);
-                    articles.toggle();
-        });      
+		$("#accordeonBesoin").append(list);
+		
+		  
             },
 
             error: function(xhr, status, errorThrown){
@@ -143,5 +149,4 @@ $(document).ready(function(){
             }
         })
     });
-
 });
