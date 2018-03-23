@@ -75,7 +75,7 @@ $(document).ready(function(){
 	)});
 
     function postSentiment(sentiment,categorie,url) {
-	console.log("postSentiment " + url)
+	console.log("postSentiment " + url);
 	$.ajax({
 	    type : 'POST',
 	    contentType : 'application/json',
@@ -93,6 +93,7 @@ $(document).ready(function(){
 		console.log('postUser error: ' + textStatus);
 	    }
 	});
+    }
 
 	$("#postBesoin").click(function(){
 	    console.log($('#categorieBesoin').val())
@@ -122,6 +123,7 @@ $(document).ready(function(){
 		    console.log('postUser error: ' + textStatus);
 		}
 	    });
+	}
 
 	    $("#postExercice").click(function(){
 		postExercice(
@@ -132,7 +134,7 @@ $(document).ready(function(){
 		)});
 
 	    function postExercice(nom,consigneGlobale,consigneQuestion,url) {
-		console.log("postExercice " + url)
+		console.log("postExercice " + url);
 		$.ajax({
 		    type : 'POST',
 		    contentType : 'application/json',
@@ -151,6 +153,7 @@ $(document).ready(function(){
 			console.log('postUser error: ' + textStatus);
 		    }
 		});
+	    }
 
 		$("#postQuestion").click(function(){
 			console.log("ICICI");
@@ -181,11 +184,7 @@ $(document).ready(function(){
 			},
 			error : function(jqXHR, textStatus, errorThrown) {
 			    console.log('postUser error: ' + textStatus);
-			}
-		    })
+			 }
+		    });
 		}
-	    }
-	}
-    }
 });
-
