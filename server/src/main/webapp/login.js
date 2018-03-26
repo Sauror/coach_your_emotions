@@ -20,6 +20,10 @@ function login() {
 		$("#sign").hide();
 		$(".pLogin").hide();
 	    afficheUser(data);
+	    var button = document.createElement("BUTTON");
+	    buttonText = document.createTextNode("DECONNEXION");
+	    button.appendChild(buttonText);
+	    $("body").append(button);
 	});
 }
 
