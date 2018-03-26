@@ -14,6 +14,7 @@ $(document).ready(function(){
 	$(".pDeleteExercice").hide();
 	$(".pDeleteQuestion").hide();
 	$(".pAffiche").hide();
+    $("#menuVertical").hide();
 
     $(".ressource").click(function(){
     	$(".pRessource").show();
@@ -27,6 +28,9 @@ $(document).ready(function(){
 	$("#logoAccueil").hide();
         $("#accueil").hide();
         $("#description").hide();
+        $("#menuHorizontal").hide();
+        $("#menuVertical").show();
+        $("body").css("background-color","#c4ebea");
         $(".divAccordeonSB").css("display","none");
     	console.log("test");
     }); 

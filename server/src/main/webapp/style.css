@@ -75,10 +75,6 @@ h3 {
    cursor: pointer;
 }
 
-strong {
-    font-size: 20px
-}
-
 .buttonExo {
  	background-color: #4CAF50;
     border: none;
@@ -91,8 +87,7 @@ strong {
 
 h1#accueil {
     font-size: 500%;
-    background-color: black;
-    color: white;
+    color: black;
     border-radius: 5px;
     text-align: center;
     margin-left: 28%;
@@ -109,18 +104,6 @@ img {
 
 p#description {
     font-size: 20px;
-}
-
-ul#menuHorizontal li {
-    display : inline;
-    padding : 0 0.5em;
-
-}
-
-ul#menuHorizontal {
-    list-style-type : none;
-    margin-left: 25%;
-    margin-right: 25%;
 }
 
 ul#menuVertical {
@@ -152,4 +135,31 @@ li a:hover {
 
 body {
     background-color: #ffeeeb;
+}
+
+.pEspace {
+    margin-left: 210px;
+}
+
+img.ressource{
+    width: 150px;
+    height: 150px;
+    margin-left: 50%;
+    margin-right: 30%;
+    cursor: pointer;
+}
+img.exercer{
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+}
+img.espace{
+    width: 150px;
+    height: 150px;
+    margin-left: 30%;
+    margin-right: 50%;
+    cursor: pointer;
 }

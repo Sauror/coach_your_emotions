@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $("#espace").click(function(){
+    $(".espace").click(function(){
     	$(".pRessource").hide();
     	$(".pExercice").hide();
     	$(".pEspace").show();
@@ -15,6 +15,10 @@ $(document).ready(function(){
 		$(".pLogin").hide();
 		$(".pSign").hide();
 		$(".pAffiche").hide();
+		$("#logoAccueil").hide();
+        $("#accueil").hide();
+        $("#description").hide();
+        $("#menuHorizontal").hide();
     	console.log("test");
     }); 
 })
