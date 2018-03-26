@@ -15,6 +15,8 @@ $(document).ready(function(){
 	$(".pDeleteQuestion").hide();
 	$(".pAffiche").hide();
     $("#menuVertical").hide();
+    $("#page").hide();
+    $("#logoPage").hide();
 
     $(".ressource").click(function(){
     	$(".pRessource").show();
@@ -32,8 +34,19 @@ $(document).ready(function(){
         $("#menuVertical").show();
         $("#sign").hide();
         $("#login").hide();
+        $("#menuVertical").css("background-color", "#9cdedd");
+
+        $("li a").hover(function(){
+            $(this).css("background-color", "#00a3a4");
+        }, function(){
+            $(this).css("background-color", "#9cdedd");
+        });
+
         $("body").css("background-color","#c4ebea");
         $(".divAccordeonSB").css("display","none");
+
+        $("#page").show();
+        $("#logoPage").show();
     	console.log("test");
     }); 
 

@@ -19,6 +19,17 @@ $(document).ready(function(){
         $("#accueil").hide();
         $("#description").hide();
         $("#menuHorizontal").hide();
+  		$("#menuVertical").show();
+        $("#menuVertical").css("background-color", "#fdced6");
+
+        $("li a").hover(function(){
+            $(this).css("background-color", "#f17389");
+        }, function(){
+            $(this).css("background-color", "#fdced6");
+        });
+
+     
+        $("body").css("background-color","#f8dfe2");
     	console.log("test");
     }); 
 })

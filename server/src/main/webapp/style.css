@@ -17,8 +17,8 @@ ul#menu {
 }
 
 #accordeon .header {
-    background-color: #811919;
-    color: white;
+    background-color: #42bebe;
+    color: black;
     cursor: pointer;
     padding: 18px;
     border: none;
@@ -94,12 +94,18 @@ h1#accueil {
     margin-right: 28%;
 }
 
-img {
+img#logoAccueil {
     width: 10%;
     height: 10%;
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+img#logoPage {
+    width: 5%;
+    height: 5%;
+    margin-left: 3%;
 }
 
 p#description {
@@ -141,25 +147,30 @@ body {
     margin-left: 210px;
 }
 
-img.ressource{
-    width: 150px;
-    height: 150px;
-    margin-left: 50%;
-    margin-right: 30%;
-    cursor: pointer;
+table {
+    margin: 25px 12%;
+    width: 100%;
 }
-img.exercer{
-    width: 150px;
-    height: 150px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    cursor: pointer;
+
+td {
+    min-width: 33.32%;
+    margin: auto;
 }
+
+img.ressource,
+img.exercer,
 img.espace{
     width: 150px;
     height: 150px;
-    margin-left: 30%;
-    margin-right: 50%;
+    margin: auto;
     cursor: pointer;
+}
+
+ul#reseaux li { 
+    display : inline;
+    padding : 0 0.1em;
+}
+
+#partage {
+    margin: auto;
 }
