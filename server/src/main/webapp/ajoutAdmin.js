@@ -297,4 +297,141 @@ $(document).ready(function(){
 				console.log('postUser error: ' + textStatus);
 			}});
 	}
+	
+	$("#DeleteSentiment").click(function(event){
+		console.log("VU ICI");
+        var categorie = "";
+        $.ajax({
+            url: "http://localhost:8080/cye/sentiment",
+            type: "GET",
+            contentType: 'application/json;charset=utf-8',
+
+            success: function(json) {
+    			$("#listeSentiment").empty()
+    			console.log("success");
+				var list = "<section class=\"pListeSentiment\"> <table><tr> <th>Numéro du sentiment&nbsp&nbsp</th><th>Nom du sentiment</th></tr>";
+                var i = 0;
+
+                json.forEach(function(sentiment, idx) {              
+                    list += "<tr><td>"+sentiment.id+"</td><td>"+sentiment.nom+"</td>";
+					
+                });
+
+                list += "</table></section>";
+			console.log(list);
+    		$("#listeSentiment").append(list);
+    	    },
+            error: function(xhr, status, errorThrown){
+                alert("Problem");
+                console.log( "Error: " + errorThrown );
+                console.log( "Status: " + status );
+            }
+        });
+    });
+	
+	$("#buttonDelete").click(function(event){
+		var tmp =document.getElementById("idEnvoiHidden").value;
+		console.log(tmp);
+		console.log("bouton detecte");
+		var url = "http://localhost:8080/cye/sentiment/"+$("#idEnvoiHidden").val();
+		deleteData(url);
+	});
+
+	$("#DeleteBesoin").click(function(event){
+		console.log("VU ICI");
+        var categorie = "";
+        $.ajax({
+            url: "http://localhost:8080/cye/besoin",
+            type: "GET",
+            contentType: 'application/json;charset=utf-8',
+
+            success: function(json) {
+    			$("#listeBesoin").empty()
+    			console.log("success");
+				var list = "<section class=\"pListeBesoin\"> <table><tr> <th>Numéro du besoin&nbsp&nbsp</th><th>Nom du besoin</th></tr>";
+                var i = 0;
+
+                json.forEach(function(besoin, idx) {              
+                    list += "<tr><td>"+besoin.id+"</td><td>"+besoin.nom+"</td></tr>";
+                });
+
+                list += "</table></section>";
+			console.log(list);
+    		$("#listeBesoin").append(list);
+    	    },
+            error: function(xhr, status, errorThrown){
+                alert("Problem");
+                console.log( "Error: " + errorThrown );
+                console.log( "Status: " + status );
+            }
+        });
+    });
+
+	$("#DeleteExercice").click(function(event){
+		console.log("VU ICI");
+        var categorie = "";
+        $.ajax({
+            url: "http://localhost:8080/cye/exercice",
+            type: "GET",
+            contentType: 'application/json;charset=utf-8',
+
+            success: function(json) {
+    			$("#listeExercice").empty()
+    			console.log("success");
+				var list = "<section class=\"pListeExercice\"> <table><tr> <th>Numéro de l'exercice&nbsp&nbsp</th><th>Nom de l'exercice</th></tr>";
+                var i = 0;
+
+                json.forEach(function(exercice, idx) {              
+                    list += "<tr><td>"+exercice.id+"</td><td>"+exercice.nom+"</td></tr>";
+                });
+
+                list += "</table></section>";
+			console.log(list);
+    		$("#listeExercice").append(list);
+    	    },
+            error: function(xhr, status, errorThrown){
+                alert("Problem");
+                console.log( "Error: " + errorThrown );
+                console.log( "Status: " + status );
+            }
+        });
+    });
+
+	$("#DeleteQuestion").click(function(event){
+		console.log("VU ICI");
+        var categorie = "";
+        $.ajax({
+            url: "http://localhost:8080/cye/question",
+            type: "GET",
+            contentType: 'application/json;charset=utf-8',
+
+            success: function(json) {
+    			$("#listeQuestion").empty()
+    			console.log("success");
+				var list = "<section class=\"pListeQuestion\"> <table><tr> <th>Numéro de l'exercice&nbsp&nbsp</th><th>Numéro de la question&nbsp&nbsp</th><th>Question</th></tr>";
+                var i = 0;
+
+                json.forEach(function(question, idx) {              
+                    list += "<tr><td>"+question.idExo+"</td><td>"+question.id+"</td><td>"+question.question+"</td></tr>";
+                });
+
+                list += "</table></section>";
+			console.log(list);
+    		$("#listeQuestion").append(list);
+    	    },
+            error: function(xhr, status, errorThrown){
+                alert("Problem");
+                console.log( "Error: " + errorThrown );
+                console.log( "Status: " + status );
+            }
+        });
+    });
+
+
+
+
+
+
+
+
 });
