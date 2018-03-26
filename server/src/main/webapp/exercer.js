@@ -7,7 +7,7 @@ $(document).ready(function(){
 	//QUAND ON CLICK SUR S'EXERCER
     $(".exercer").click(function(){ // mettre un point
 		$(".pRessource").hide();
-		$("#menuVertical").hide();
+		$("#menuVertical").show();
 		$("#logoAcceuil").hide();
     	$(".pExercice").show();
 		$(".pDeleteSentiment").hide();
@@ -24,6 +24,26 @@ $(document).ready(function(){
     	$(".pEspace").hide();
 		$(".pAffiche").hide();
     	$(".pAjoutAdmin").hide();
+    	$("#menuHorizontal").hide();
+    	$("#accueil").hide();
+    	$("#logoAccueil").hide();
+    	$("#description").hide();
+    	$("#sign").hide();
+    	$("#login").hide();
+    	$("#page").show();
+        $("#logoPage").show();
+
+        $("#menuVertical").css("background-color", "#ffce8c");
+
+        $("li a").hover(function(){
+            $(this).css("background-color", "#f5852f");
+        }, function(){
+            $(this).css("background-color", "#ffce8c");
+        });
+
+        $("body").css("background-color","#fddca7");
+
+
         $.ajax({
         	url: "http://localhost:8080/cye/exercice",
             type: "GET",

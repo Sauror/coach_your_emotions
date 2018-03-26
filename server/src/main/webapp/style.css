@@ -118,7 +118,7 @@ ul#menuVertical {
     padding: 0;
     width: 200px;
     background-color: #f1f1f1;
-    position: fixed;
+    position: absolute;
     margin-top: 5%;
 }
 
@@ -173,4 +173,8 @@ ul#reseaux li {
 
 #partage {
     margin: auto;
+}
+
+#formOutPut {
+    margin-left: 210px;
 }
