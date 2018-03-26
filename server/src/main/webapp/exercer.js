@@ -89,12 +89,12 @@ $(document).ready(function(){
 			var button1 = document.createElement("BUTTON");
 			var t1 = document.createTextNode("Retour");
 			button1.appendChild(t1);
-			button1.className = "btn1";
+			button1.className = "btn";
 			button1.id = "idBtn1";
 			var button2 = document.createElement("BUTTON");	
 			var t2 = document.createTextNode("Commencer");	
 			button2.appendChild(t2);
-			button2.className = "btn2";
+			button2.className = "btn";
 			button2.id = "idBtn2";
 			$("#formOutPut").append(p);
 			$("#formOutPut").append("<br>");
@@ -104,7 +104,7 @@ $(document).ready(function(){
 	});
 	
 	//QUAND ON CLIC SUR RETOUR	
-	$("#formOutPut").on("click", ".btn1",function(){
+	$("#formOutPut").on("click", "#idBtn1",function(){
 		$(".pRessource").hide();
     	$(".pExercice").show();
     	$(".pEspace").hide();
@@ -133,7 +133,7 @@ $(document).ready(function(){
 	});
 	
 	//QUAND ON CLIC SUR COMMENCER
-	$("#formOutPut").on("click", ".btn2",function(){
+	$("#formOutPut").on("click", "#idBtn2",function(){
 		$.ajax({
 			url: "http://localhost:8080/cye/question/exoid/" + exoActuel,
 			type: "GET",

@@ -76,7 +76,7 @@ h3 {
 }
 
 .buttonExo {
- 	background-color: #4CAF50;
+ 	background-color: #fd9b44;
     border: none;
     color: white;
     padding: 16px 32px;
@@ -169,4 +169,16 @@ ul#reseaux li {
 
 #partage {
     margin: auto;
+}
+
+.btn {
+    background-color: #fd9b44;
+}
+
+.btn:hover {
+    background-color: #f5852f;
+}
+
+#formOutPut p{
+    font-size: 28px;
 }
