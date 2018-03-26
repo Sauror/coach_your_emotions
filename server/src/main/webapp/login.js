@@ -16,33 +16,33 @@ $(document).ready(function(){
 
 function login() {
 	getWithAuthorizationHeader("cye/login", function(data){
-		//$("#pLogin").hide();
-		afficheUser(data);
+		$("#login").hide();
+		$("#sign").hide();
+	    afficheUser(data);
 	});
 }
 
-function getWithAuthorizationHeader(url, callback) {
-	if($("#userlogin").val() != "") {
-		$.ajax ({
-			type: "GET",
-			url: url,
-			dataType: 'json',
-			beforeSend : function(req) {
-				req.setRequestHeader("Authorization", "Basic " + btoa($("#userlogin").val() + ":" + $("#passwdlogin").val()));
-			},
-			success: callback,
-			error : function(jqXHR, textStatus, errorThrown) {
-				alert('Error : ' + textStatus);
-			}
-		});
-	} 
-	else {
-		$.getJSON(url, function(data) {
-			alert('Champs Login Vide');
-		});
-	}
-	alert('Authentification')
-}
+ function getWithAuthorizationHeader(url, callback) {
+ if($("#userLogin").val() != "") {
+     $.ajax
+     ({
+       type: "GET",
+       url: url,
+       dataType: 'json',
+       beforeSend : function(req) {
+        req.setRequestHeader("Authorization", "Basic " + btoa($("#userLogin").val() + ":" + $("#passwdLogin").val()));
+       },
+       success: callback,
+       error : function(jqXHR, textStatus, errorThrown) {
+       			alert('error: ' + textStatus);
+       		}
+     });
+     } else {
+     $.getJSON(url, function(data) {
+     	    afficheUser(data);
+        });
+     }
+ }
 
 function afficheUser(data) {
 	console.log(data);
