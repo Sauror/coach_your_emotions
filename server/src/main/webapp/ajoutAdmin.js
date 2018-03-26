@@ -313,13 +313,19 @@ $(document).ready(function(){
                 var i = 0;
 
                 json.forEach(function(sentiment, idx) {              
-                    list += "<tr><td>"+sentiment.id+"</td><td>"+sentiment.nom+"</td>";
-					
+                    list += "<tr><td>"+sentiment.id+"</td><td>"+sentiment.nom+"</td><td><button class='btnDelete' data-id="+sentiment.id+">Supprimer</button></td></tr>";
                 });
 
                 list += "</table></section>";
 			console.log(list);
     		$("#listeSentiment").append(list);
+			$(".btnDelete").click(function(event){
+						console.log(this.dataset.id);
+						console.log("bouton detecte");
+						var url = "http://localhost:8080/cye/sentiment/"+this.dataset.id;
+						deleteData(url);
+						$(this).parent().parent().remove();
+					});
     	    },
             error: function(xhr, status, errorThrown){
                 alert("Problem");
@@ -352,12 +358,19 @@ $(document).ready(function(){
                 var i = 0;
 
                 json.forEach(function(besoin, idx) {              
-                    list += "<tr><td>"+besoin.id+"</td><td>"+besoin.nom+"</td></tr>";
+                    list += "<tr><td>"+besoin.id+"</td><td>"+besoin.nom+"</td><td><button class='btnDelete' data-id="+besoin.id+">Supprimer</button></td></tr>";
                 });
 
                 list += "</table></section>";
 			console.log(list);
     		$("#listeBesoin").append(list);
+				$(".btnDelete").click(function(event){
+						console.log(this.dataset.id);
+						console.log("bouton detecte");
+						var url = "http://localhost:8080/cye/besoin/"+this.dataset.id;
+						deleteData(url);
+						$(this).parent().parent().remove();
+					});
     	    },
             error: function(xhr, status, errorThrown){
                 alert("Problem");
@@ -382,12 +395,20 @@ $(document).ready(function(){
                 var i = 0;
 
                 json.forEach(function(exercice, idx) {              
-                    list += "<tr><td>"+exercice.id+"</td><td>"+exercice.nom+"</td></tr>";
+                    list += "<tr><td>"+exercice.id+"</td><td>"+exercice.nom+"</td><td><button class='btnDelete' data-id="+exercice.id+">Supprimer</button></td></tr>";
                 });
 
                 list += "</table></section>";
 			console.log(list);
     		$("#listeExercice").append(list);
+				$(".btnDelete").click(function(event){
+						console.log(this.dataset.id);
+						console.log("bouton detecte");
+						var url = "http://localhost:8080/cye/exercice/"+this.dataset.id;
+						deleteData(url);
+						$(this).parent().parent().remove();
+					});
+
     	    },
             error: function(xhr, status, errorThrown){
                 alert("Problem");
@@ -412,12 +433,21 @@ $(document).ready(function(){
                 var i = 0;
 
                 json.forEach(function(question, idx) {              
-                    list += "<tr><td>"+question.idExo+"</td><td>"+question.id+"</td><td>"+question.question+"</td></tr>";
+                    list += "<tr><td>"+question.idExo+"</td><td>"+question.id+"</td><td>"+question.question+"</td><td><button class='btnDelete' data-id="+question.id+">Supprimer</button>";
                 });
 
                 list += "</table></section>";
 			console.log(list);
     		$("#listeQuestion").append(list);
+				$(".btnDelete").click(function(event){
+						console.log(this.dataset.id);
+						console.log("bouton detecte");
+						var url = "http://localhost:8080/cye/question/"+this.dataset.id;
+						deleteData(url);
+						$(this).parent().parent().remove();
+					});
+
+
     	    },
             error: function(xhr, status, errorThrown){
                 alert("Problem");
