@@ -14,6 +14,8 @@ $(document).ready(function(){
 		$(".pDeleteQuestion").hide();
 		$(".pLogin").hide();
 		$(".pSign").hide();
+		$("#login").hide();
+		$("#sign").hide();
 		$(".pAffiche").hide();
 		$("#logoAccueil").hide();
         $("#accueil").hide();
@@ -28,7 +30,8 @@ $(document).ready(function(){
             $(this).css("background-color", "#fdced6");
         });
 
-     
+     	$("#page").show();
+        $("#logoPage").show();
         $("body").css("background-color","#f8dfe2");
     	console.log("test");
     }); 
