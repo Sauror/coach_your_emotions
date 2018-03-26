@@ -6,7 +6,7 @@ SAURO Romain
 	/
 
 ## Ce que nous allons faire durant le prochain sprint
-	Discuter plus longtemps sur la répartition des tâches.
+	Discuter encore une fois de la répartition des tâches afin de clarifier cela.
 
 ## PDCA 
 ### Qu'avons nous testé durant ce sprint ? 
@@ -19,7 +19,7 @@ SAURO Romain
 	/
 
 ### Qu'allons nous tester durant les 2 prochaines heures ? 
-	Discuter plus longtemps sur la répartition des tâches.
+	Discuter encore une fois de la répartition des tâches afin de clarifier cela.
 
 ### À quoi verra-t-on que celà à fonctionné ?
-	Des tâches bien séparées entre chaque membre du groupe afin d'être organisé et productif.
+	Des tâches bien séparées entre chaque membre du groupe ce qui nous permettra d'être organisé et productif.
