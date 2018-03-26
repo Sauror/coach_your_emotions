@@ -8,8 +8,13 @@ $(document).ready(function(){
 		$(".pAjoutBesoin").hide();
 		$(".pAjoutExercice").hide();
 		$(".pAjoutQuestion").hide();
+		$(".pDeleteSentiment").hide();
+		$(".pDeleteBesoin").hide();
+		$(".pDeleteExercice").hide();
+		$(".pDeleteQuestion").hide();
 		$(".pLogin").hide();
 		$(".pSign").hide();
+		$(".pAffiche").hide();
 	});
 
 	$("#AjoutSentiment").click(function(){
@@ -21,9 +26,9 @@ $(document).ready(function(){
 		$(".pAjoutBesoin").hide();
 		$(".pAjoutExercice").hide();
 		$(".pAjoutQuestion").hide();
-		//$("#sentiment").hide();
 		$(".pLogin").hide();
 		$(".pSign").hide();
+		$(".pAffiche").hide();
 	});
 
 	$("#AjoutBesoin").click(function(){
@@ -37,6 +42,7 @@ $(document).ready(function(){
 		$(".pAjoutQuestion").hide();
 		$(".pLogin").hide();
 		$(".pSign").hide();
+		$(".pAffiche").hide();
 	});
 
 	$("#AjoutExercice").click(function(){
@@ -50,6 +56,7 @@ $(document).ready(function(){
 		$(".pAjoutQuestion").hide();
 		$(".pLogin").hide();
 		$(".pSign").hide();
+		$(".pAffiche").hide();
 	});
 
 	$("#AjoutQuestion").click(function(){
@@ -61,6 +68,74 @@ $(document).ready(function(){
 		$(".pAjoutBesoin").hide();
 		$(".pAjoutExercice").hide();
 		$(".pAjoutQuestion").show();
+		$(".pLogin").hide();
+		$(".pSign").hide();
+		$(".pAffiche").hide();
+	});
+
+	$("#DeleteSentiment").click(function(){
+		$(".pRessource").hide();
+		$(".pExercice").hide();
+		$(".pEspace").hide();
+		$(".pAjoutAdmin").hide();
+		$(".pAjoutSentiment").hide();
+		$(".pAjoutBesoin").hide();
+		$(".pAjoutExercice").hide();
+		$(".pDeleteSentiment").show();
+		$(".pDeleteBesoin").hide();
+		$(".pDeleteExercice").hide();
+		$(".pDeleteQuestion").hide();
+		$(".pAjoutQuestion").hide();
+		$(".pLogin").hide();
+		$(".pSign").hide();
+	});
+
+	$("#DeleteBesoin").click(function(){
+		$(".pRessource").hide();
+		$(".pExercice").hide();
+		$(".pEspace").hide();
+		$(".pAjoutAdmin").hide();
+		$(".pAjoutSentiment").hide();
+		$(".pAjoutBesoin").hide();
+		$(".pAjoutExercice").hide();
+		$(".pDeleteSentiment").hide();
+		$(".pDeleteBesoin").show();
+		$(".pDeleteExercice").hide();
+		$(".pDeleteQuestion").hide();
+		$(".pAjoutQuestion").hide();
+		$(".pLogin").hide();
+		$(".pSign").hide();
+	});
+	$("#DeleteExercice").click(function(){
+		$(".pRessource").hide();
+		$(".pExercice").hide();
+		$(".pEspace").hide();
+		$(".pAjoutAdmin").hide();
+		$(".pAjoutSentiment").hide();
+		$(".pAjoutBesoin").hide();
+		$(".pAjoutExercice").hide();
+		$(".pDeleteSentiment").hide();
+		$(".pDeleteBesoin").hide();
+		$(".pDeleteExercice").show();
+		$(".pDeleteQuestion").hide();
+		$(".pAjoutQuestion").hide();
+		$(".pLogin").hide();
+		$(".pSign").hide();
+	});
+	
+	$("#DeleteQuestion").click(function(){
+		$(".pRessource").hide();
+		$(".pExercice").hide();
+		$(".pEspace").hide();
+		$(".pAjoutAdmin").hide();
+		$(".pAjoutSentiment").hide();
+		$(".pAjoutBesoin").hide();
+		$(".pAjoutExercice").hide();
+		$(".pDeleteSentiment").hide();
+		$(".pDeleteBesoin").hide();
+		$(".pDeleteExercice").hide();
+		$(".pDeleteQuestion").show();
+		$(".pAjoutQuestion").hide();
 		$(".pLogin").hide();
 		$(".pSign").hide();
 	});
@@ -189,12 +264,27 @@ $(document).ready(function(){
 	}
 
 
-	$("#deleteSentiment").click(function(){
-		var chaine = 'http://localhost:8080/cye/sentiment/' + $('#idExo').val();
-		deleteSentiment(chaine);
+	$("#dSentiment").click(function(){
+		console.log('http://localhost:8080/cye/sentiment/'+$('#idSentiment').val());
+		deleteData('http://localhost:8080/cye/sentiment/'+$('#idSentiment').val());
 	});
 
-	function deleteSentiment(url){
+	$("#dBesoin").click(function(){
+		console.log('http://localhost:8080/cye/besoin/'+$('#idBesoin').val());
+		deleteData('http://localhost:8080/cye/besoin/'+$('#idBesoin').val());
+	});
+
+	$("#dExercice").click(function(){
+		console.log('http://localhost:8080/cye/exercice/'+$('#idExercice').val());
+		deleteData('http://localhost:8080/cye/exercice/'+$('#idExercice').val());
+	});
+
+	$("#dQuestion").click(function(){
+		console.log('http://localhost:8080/cye/question/'+$('#idQuestion').val());
+		deleteData('http://localhost:8080/cye/question/'+$('#idQuestion').val());
+	});
+
+	function deleteData(url){
 		$.ajax({
 			type : 'DELETE',
 			contentType : 'application/json',
@@ -207,4 +297,171 @@ $(document).ready(function(){
 				console.log('postUser error: ' + textStatus);
 			}});
 	}
+	
+	$("#DeleteSentiment").click(function(event){
+		console.log("VU ICI");
+        var categorie = "";
+        $.ajax({
+            url: "http://localhost:8080/cye/sentiment",
+            type: "GET",
+            contentType: 'application/json;charset=utf-8',
+
+            success: function(json) {
+    			$("#listeSentiment").empty()
+    			console.log("success");
+				var list = "<section class=\"pListeSentiment\"> <table><tr> <th>Numéro du sentiment&nbsp&nbsp</th><th>Nom du sentiment</th></tr>";
+                var i = 0;
+
+                json.forEach(function(sentiment, idx) {              
+                    list += "<tr><td>"+sentiment.id+"</td><td>"+sentiment.nom+"</td><td><button class='btnDelete' data-id="+sentiment.id+">Supprimer</button></td></tr>";
+                });
+
+                list += "</table></section>";
+			console.log(list);
+    		$("#listeSentiment").append(list);
+			$(".btnDelete").click(function(event){
+						console.log(this.dataset.id);
+						console.log("bouton detecte");
+						var url = "http://localhost:8080/cye/sentiment/"+this.dataset.id;
+						deleteData(url);
+						$(this).parent().parent().remove();
+					});
+    	    },
+            error: function(xhr, status, errorThrown){
+                alert("Problem");
+                console.log( "Error: " + errorThrown );
+                console.log( "Status: " + status );
+            }
+        });
+    });
+	
+	$("#buttonDelete").click(function(event){
+		var tmp =document.getElementById("idEnvoiHidden").value;
+		console.log(tmp);
+		console.log("bouton detecte");
+		var url = "http://localhost:8080/cye/sentiment/"+$("#idEnvoiHidden").val();
+		deleteData(url);
+	});
+
+	$("#DeleteBesoin").click(function(event){
+		console.log("VU ICI");
+        var categorie = "";
+        $.ajax({
+            url: "http://localhost:8080/cye/besoin",
+            type: "GET",
+            contentType: 'application/json;charset=utf-8',
+
+            success: function(json) {
+    			$("#listeBesoin").empty()
+    			console.log("success");
+				var list = "<section class=\"pListeBesoin\"> <table><tr> <th>Numéro du besoin&nbsp&nbsp</th><th>Nom du besoin</th></tr>";
+                var i = 0;
+
+                json.forEach(function(besoin, idx) {              
+                    list += "<tr><td>"+besoin.id+"</td><td>"+besoin.nom+"</td><td><button class='btnDelete' data-id="+besoin.id+">Supprimer</button></td></tr>";
+                });
+
+                list += "</table></section>";
+			console.log(list);
+    		$("#listeBesoin").append(list);
+				$(".btnDelete").click(function(event){
+						console.log(this.dataset.id);
+						console.log("bouton detecte");
+						var url = "http://localhost:8080/cye/besoin/"+this.dataset.id;
+						deleteData(url);
+						$(this).parent().parent().remove();
+					});
+    	    },
+            error: function(xhr, status, errorThrown){
+                alert("Problem");
+                console.log( "Error: " + errorThrown );
+                console.log( "Status: " + status );
+            }
+        });
+    });
+
+	$("#DeleteExercice").click(function(event){
+		console.log("VU ICI");
+        var categorie = "";
+        $.ajax({
+            url: "http://localhost:8080/cye/exercice",
+            type: "GET",
+            contentType: 'application/json;charset=utf-8',
+
+            success: function(json) {
+    			$("#listeExercice").empty()
+    			console.log("success");
+				var list = "<section class=\"pListeExercice\"> <table><tr> <th>Numéro de l'exercice&nbsp&nbsp</th><th>Nom de l'exercice</th></tr>";
+                var i = 0;
+
+                json.forEach(function(exercice, idx) {              
+                    list += "<tr><td>"+exercice.id+"</td><td>"+exercice.nom+"</td><td><button class='btnDelete' data-id="+exercice.id+">Supprimer</button></td></tr>";
+                });
+
+                list += "</table></section>";
+			console.log(list);
+    		$("#listeExercice").append(list);
+				$(".btnDelete").click(function(event){
+						console.log(this.dataset.id);
+						console.log("bouton detecte");
+						var url = "http://localhost:8080/cye/exercice/"+this.dataset.id;
+						deleteData(url);
+						$(this).parent().parent().remove();
+					});
+
+    	    },
+            error: function(xhr, status, errorThrown){
+                alert("Problem");
+                console.log( "Error: " + errorThrown );
+                console.log( "Status: " + status );
+            }
+        });
+    });
+
+	$("#DeleteQuestion").click(function(event){
+		console.log("VU ICI");
+        var categorie = "";
+        $.ajax({
+            url: "http://localhost:8080/cye/question",
+            type: "GET",
+            contentType: 'application/json;charset=utf-8',
+
+            success: function(json) {
+    			$("#listeQuestion").empty()
+    			console.log("success");
+				var list = "<section class=\"pListeQuestion\"> <table><tr> <th>Numéro de l'exercice&nbsp&nbsp</th><th>Numéro de la question&nbsp&nbsp</th><th>Question</th></tr>";
+                var i = 0;
+
+                json.forEach(function(question, idx) {              
+                    list += "<tr><td>"+question.idExo+"</td><td>"+question.id+"</td><td>"+question.question+"</td><td><button class='btnDelete' data-id="+question.id+">Supprimer</button>";
+                });
+
+                list += "</table></section>";
+			console.log(list);
+    		$("#listeQuestion").append(list);
+				$(".btnDelete").click(function(event){
+						console.log(this.dataset.id);
+						console.log("bouton detecte");
+						var url = "http://localhost:8080/cye/question/"+this.dataset.id;
+						deleteData(url);
+						$(this).parent().parent().remove();
+					});
+
+
+    	    },
+            error: function(xhr, status, errorThrown){
+                alert("Problem");
+                console.log( "Error: " + errorThrown );
+                console.log( "Status: " + status );
+            }
+        });
+    });
+
+
+
+
+
+
+
+
 });
