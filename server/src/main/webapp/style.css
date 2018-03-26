@@ -135,16 +135,12 @@ li a:hover {
     color: white;
 }
 
-#accordeon {
+#accordeon, .pAjoutAdmin, .pEspace, #formOutPut  {
     margin-left: 210px;
 }
 
 body {
     background-color: #ffeeeb;
-}
-
-.pEspace {
-    margin-left: 210px;
 }
 
 table {
@@ -173,8 +169,4 @@ ul#reseaux li {
 
 #partage {
     margin: auto;
-}
-
-#formOutPut {
-    margin-left: 210px;
 }
