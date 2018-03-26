@@ -134,6 +134,10 @@
       <button type="button" id="AjoutBesoin" class="pAjoutAdmin btn btn-lg btn-block btn-success"> Ajouter un besoin</button>
       <button type="button" id="AjoutExercice" class="pAjoutAdmin btn btn-lg btn-block btn-success"> Ajouter un exercice </button>
       <button type="button" id="AjoutQuestion" class="pAjoutAdmin btn btn-lg btn-block btn-success"> Ajouter une question </button>
+		<button type="button" id="DeleteSentiment" class="pAjoutAdmin btn btn-lg btn-block btn-success"> Ajouter un sentiment </button>
+		<button type="button" id="DeleteBesoin" class="pAjoutAdmin btn btn-lg btn-block btn-success"> Supprimer un besoin </button>
+		<button type="button" id="DeleteExercice" class="pAjoutAdmin btn btn-lg btn-block btn-success"> Supprimer un Exercice </button>
+		<button type="button" id="DeleteQuestion" class="pAjoutAdmin btn btn-lg btn-block btn-success"> Supprimer une question </button>
     </div>
 
     <div id="pAjoutSentiment">
@@ -164,9 +168,25 @@
     </div>
 
     <div id="pDeleteSentiment">
-      <input type="text" name="sentimentdb" id="idExo" placeholder="Numero de l'exercice" class="pDeleteSentiment"/>
-      <button type="button" id="deleteSentiment" class="pDeleteSentiment btn btn-lg btn-block btn-success"> Supprimer le sentiment</button>
+      <input type="text" name="sentimentdb" id="idExo" placeholder="Numéro du sentiment" class="pDeleteSentiment"/>
+      <button type="button" id="dSentiment" class="pDeleteSentiment btn btn-lg btn-block btn-success"> Supprimer le sentiment</button>
     </div>
+
+	<div id="pDeleteBesoin">
+      <input type="text" name="besoindb" id="idBesoin" placeholder="Numéro du Besoin" class="pDeleteBesoin"/>
+      <button type="button" id="dBesoin" class="pDeleteBesoin btn btn-lg btn-block btn-success"> Supprimer le besoin</button>
+    </div>
+
+	<div id="pDeleteExercice">
+      <input type="text" name="exercicedb" id="idExercice" placeholder="Numéro de l'exercice" class="pDeleteExercice"/>
+      <button type="button" id="dExercice" class="pDeleteExercice btn btn-lg btn-block btn-success"> Supprimer l'exercice</button>
+    </div>
+
+	<div id="pDeleteQuestion">
+    <input type="text" name="questiondb" id="idQuestion" placeholder="Numéro de la question" class="pDeleteQuestion"/>
+    <button type="button" id="dQuestion" class="pDeleteQuestion btn btn-lg btn-block btn-success"> Supprimer la question</button>
+    </div>
+
 
     <center>
       <div id="pLogin">

@@ -13,6 +13,15 @@ $(document).ready(function(){
     $("#exercer").click(function(){
     	$(".pRessource").hide();
     	$(".pExercice").show();
+		$(".pDeleteSentiment").hide();
+		$(".pDeleteBesoin").hide();
+		$(".pDeleteExercice").hide();
+		$(".pDeleteQuestion").hide();
+		$(".pAjoutAdmin").hide();
+    	$(".pAjoutSentiment").hide();
+    	$(".pAjoutBesoin").hide();
+    	$(".pAjoutExercice").hide();
+    	$(".pAjoutQuestion").hide();
     	$(".pLogin").hide();
     	$(".pSign").hide();
     	$(".pEspace").hide();

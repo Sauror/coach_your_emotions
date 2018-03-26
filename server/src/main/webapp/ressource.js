@@ -9,7 +9,10 @@ $(document).ready(function(){
     $(".pAjoutQuestion").hide();
     $(".pLogin").hide();
     $(".pSign").hide();
-    $("#pDeleteSentiment").hide();
+    $(".pDeleteSentiment").hide();
+	$(".pDeleteBesoin").hide();
+	$(".pDeleteExercice").hide();
+	$(".pDeleteQuestion").hide();
 	$(".pAffiche").hide();
 
     $("#ressource").click(function(){

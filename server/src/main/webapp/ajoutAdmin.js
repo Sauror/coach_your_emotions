@@ -70,6 +70,73 @@ $(document).ready(function(){
 		$(".pAffiche").hide();
 	});
 
+	$("#DeleteSentiment").click(function(){
+		$(".pRessource").hide();
+		$(".pExercice").hide();
+		$(".pEspace").hide();
+		$(".pAjoutAdmin").hide();
+		$(".pAjoutSentiment").hide();
+		$(".pAjoutBesoin").hide();
+		$(".pAjoutExercice").hide();
+		$(".pDeleteSentiment").show();
+		$(".pDeleteBesoin").hide();
+		$(".pDeleteExercice").hide();
+		$(".pDeleteQuestion").hide();
+		$(".pAjoutQuestion").hide();
+		$(".pLogin").hide();
+		$(".pSign").hide();
+	});
+
+	$("#DeleteBesoin").click(function(){
+		$(".pRessource").hide();
+		$(".pExercice").hide();
+		$(".pEspace").hide();
+		$(".pAjoutAdmin").hide();
+		$(".pAjoutSentiment").hide();
+		$(".pAjoutBesoin").hide();
+		$(".pAjoutExercice").hide();
+		$(".pDeleteSentiment").hide();
+		$(".pDeleteBesoin").show();
+		$(".pDeleteExercice").hide();
+		$(".pDeleteQuestion").hide();
+		$(".pAjoutQuestion").hide();
+		$(".pLogin").hide();
+		$(".pSign").hide();
+	});
+	$("#DeleteExercice").click(function(){
+		$(".pRessource").hide();
+		$(".pExercice").hide();
+		$(".pEspace").hide();
+		$(".pAjoutAdmin").hide();
+		$(".pAjoutSentiment").hide();
+		$(".pAjoutBesoin").hide();
+		$(".pAjoutExercice").hide();
+		$(".pDeleteSentiment").hide();
+		$(".pDeleteBesoin").hide();
+		$(".pDeleteExercice").show();
+		$(".pDeleteQuestion").hide();
+		$(".pAjoutQuestion").hide();
+		$(".pLogin").hide();
+		$(".pSign").hide();
+	});
+	
+	$("#DeleteQuestion").click(function(){
+		$(".pRessource").hide();
+		$(".pExercice").hide();
+		$(".pEspace").hide();
+		$(".pAjoutAdmin").hide();
+		$(".pAjoutSentiment").hide();
+		$(".pAjoutBesoin").hide();
+		$(".pAjoutExercice").hide();
+		$(".pDeleteSentiment").hide();
+		$(".pDeleteBesoin").hide();
+		$(".pDeleteExercice").hide();
+		$(".pDeleteQuestion").show();
+		$(".pAjoutQuestion").hide();
+		$(".pLogin").hide();
+		$(".pSign").hide();
+	});
+
 	$("#postSentiment").click(function(){
 		console.log($('#categorieSentiment').val())
 		console.log($('#nomSentiment').val())
@@ -194,12 +261,27 @@ $(document).ready(function(){
 	}
 
 
-	$("#deleteSentiment").click(function(){
-		var chaine = 'http://localhost:8080/cye/sentiment/' + $('#idExo').val();
-		deleteSentiment(chaine);
+	$("#dSentiment").click(function(){
+		console.log('http://localhost:8080/cye/sentiment/'+$('#idSentiment').val());
+		deleteData('http://localhost:8080/cye/sentiment/'+$('#idSentiment').val());
 	});
 
-	function deleteSentiment(url){
+	$("#dBesoin").click(function(){
+		console.log('http://localhost:8080/cye/besoin/'+$('#idBesoin').val());
+		deleteData('http://localhost:8080/cye/besoin/'+$('#idBesoin').val());
+	});
+
+	$("#dExercice").click(function(){
+		console.log('http://localhost:8080/cye/exercice/'+$('#idExercice').val());
+		deleteData('http://localhost:8080/cye/exercice/'+$('#idExercice').val());
+	});
+
+	$("#dQuestion").click(function(){
+		console.log('http://localhost:8080/cye/question/'+$('#idQuestion').val());
+		deleteData('http://localhost:8080/cye/question/'+$('#idQuestion').val());
+	});
+
+	function deleteData(url){
 		$.ajax({
 			type : 'DELETE',
 			contentType : 'application/json',
