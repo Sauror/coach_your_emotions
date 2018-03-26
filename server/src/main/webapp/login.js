@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	$("#login").click(function(){
+	$("#login").click(function(event){
 		$(".pRessource").hide();
 		$(".pExercice").hide();
 		$(".pEspace").hide();
@@ -18,6 +18,7 @@ function login() {
 	getWithAuthorizationHeader("cye/login", function(data){
 		$("#login").hide();
 		$("#sign").hide();
+		$(".pLogin").hide();
 	    afficheUser(data);
 	});
 }

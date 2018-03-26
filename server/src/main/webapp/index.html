@@ -243,8 +243,9 @@
 	
 	<script type="text/javascript">
 	  $(document).ready(function() {
-      	  $("#bLogin").click(function () {
-      	  login();
+      	  $("#bLogin").click(function (event) {
+      		  event.preventDefault();
+      	  	login();
       	  });
       	  $("#bSign").click(function () {
           postUser(
