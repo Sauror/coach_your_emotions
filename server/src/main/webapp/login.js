@@ -23,7 +23,11 @@ function login() {
 	    var button = document.createElement("BUTTON");
 	    buttonText = document.createTextNode("DECONNEXION");
 	    button.appendChild(buttonText);
+	    button.id = "btnDeco";
 	    $("body").append(button);
+		$("#btnDeco").on("click", function(){
+	    	location.reload();
+	    });
 	});
 }
 
