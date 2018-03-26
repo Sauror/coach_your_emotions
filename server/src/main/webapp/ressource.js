@@ -30,6 +30,8 @@ $(document).ready(function(){
         $("#description").hide();
         $("#menuHorizontal").hide();
         $("#menuVertical").show();
+        $("#sign").hide();
+        $("#login").hide();
         $("body").css("background-color","#c4ebea");
         $(".divAccordeonSB").css("display","none");
     	console.log("test");
