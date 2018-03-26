@@ -17,6 +17,7 @@ $(document).ready(function(){
     	$(".pAjoutAdmin").hide();
     	$(".pEspace").hide();
         $("article").hide();
+        $(".divAccordeonSB").css("display","none");
     	console.log("test");
     }); 
 
