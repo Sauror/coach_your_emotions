@@ -8,13 +8,15 @@ public class Question {
 	private String question;
 	private String correctionOui;
 	private String correctionNon;
+	private String reponseAttendue;
 	
-	public Question(int id, int idExo, String question, String correctionOui,String correctionNon) {
+	public Question(int id, int idExo, String question, String correctionOui,String correctionNon, String reponseAttendue) {
 		this.id = id;
 		this.idExo = idExo;
 		this.question = question;
 		this.correctionOui = correctionOui;
 		this.correctionNon = correctionNon;
+		this.reponseAttendue = reponseAttendue;
 	}
 	
 	public Question() {}
@@ -59,12 +61,21 @@ public class Question {
 		this.correctionNon = correctionNon;
 	}
 	
+	public String getReponseAttendue() {
+		return reponseAttendue;
+	}
+
+	public void setReponseAttendue(String reponseAttendue) {
+		this.reponseAttendue = reponseAttendue;
+	}
+
 	public void initFromDto(QuestionDto dto) {
 		this.setId(dto.getId());
 		this.setIdExo(dto.getIdExo());
 		this.setQuestion(dto.getQuestion());
 		this.setCorrectionOui(dto.getCorrectionOui());
 		this.setCorrectionNon(dto.getCorrectionNon());
+		this.setReponseAttendue(dto.getReponseAttendue());
 	}
 	
 	public QuestionDto convertToDto() {
@@ -74,6 +85,7 @@ public class Question {
 		dto.setQuestion(this.getQuestion());
 		dto.setCorrectionOui(this.getCorrectionOui());
 		dto.setCorrectionNon(this.getCorrectionNon());
+		dto.setReponseAttendue(this.getReponseAttendue());
 		return dto;	
 	}
 	

@@ -6,6 +6,8 @@ public class QuestionDto {
 	private String question;
 	private String correctionOui;
 	private String correctionNon;
+	private String reponseAttendue;
+	
 	public int getId() {
 		return id;
 	}
@@ -36,6 +38,11 @@ public class QuestionDto {
 	public void setCorrectionNon(String correctionNon) {
 		this.correctionNon = correctionNon;
 	}
-	
+	public String getReponseAttendue() {
+		return reponseAttendue;
+	}
+	public void setReponseAttendue(String reponseAttendue) {
+		this.reponseAttendue = reponseAttendue;
+	}
 	
 }
