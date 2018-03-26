@@ -187,6 +187,29 @@
 	<input type="password" name="user" id="passwd" placeholder="Mot de passe ?" class="pSign"/>
       </div>
     </center>
+    
+    <script type="text/javascript">
+      $(document).ready(function() {
+      $("#get").click(function () {
+      getUser($('#user').val(), $('#alias').val())
+      });
+      $("#post").click(function () {
+      postUser(
+      $('#user').val(),
+      $('#alias').val(),
+      $('#email').val(),
+      $('#passwd').val())});
+      $("#list").click(function () {
+      listUsers()
+      });
+      $("#login").click(function () {
+      login();
+      });
+      $("#profile").click(function () {
+      profile()
+      });
+      });
+    </script>
 
   </body>
 </html>
