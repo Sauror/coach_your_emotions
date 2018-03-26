@@ -10,6 +10,7 @@ $(document).ready(function(){
     $(".pLogin").hide();
     $(".pSign").hide();
     $("#pDeleteSentiment").hide();
+	$(".pAffiche").hide();
 
     $("#ressource").click(function(){
     	$(".pRessource").show();
@@ -19,6 +20,7 @@ $(document).ready(function(){
         $("article").hide();
         $(".pSign").hide();
         $(".pLogin").hide();
+		$(".pAffiche").hide();
         $(".divAccordeonSB").css("display","none");
     	console.log("test");
     }); 

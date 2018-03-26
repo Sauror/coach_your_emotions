@@ -10,6 +10,7 @@ $(document).ready(function(){
 		$(".pAjoutQuestion").hide();
 		$(".pLogin").hide();
 		$(".pSign").hide();
+		$(".pAffiche").hide();
 	});
 
 	$("#AjoutSentiment").click(function(){
@@ -24,6 +25,7 @@ $(document).ready(function(){
 		//$("#sentiment").hide();
 		$(".pLogin").hide();
 		$(".pSign").hide();
+		$(".pAffiche").hide();
 	});
 
 	$("#AjoutBesoin").click(function(){
@@ -37,6 +39,7 @@ $(document).ready(function(){
 		$(".pAjoutQuestion").hide();
 		$(".pLogin").hide();
 		$(".pSign").hide();
+		$(".pAffiche").hide();
 	});
 
 	$("#AjoutExercice").click(function(){
@@ -50,6 +53,7 @@ $(document).ready(function(){
 		$(".pAjoutQuestion").hide();
 		$(".pLogin").hide();
 		$(".pSign").hide();
+		$(".pAffiche").hide();
 	});
 
 	$("#AjoutQuestion").click(function(){
@@ -63,6 +67,7 @@ $(document).ready(function(){
 		$(".pAjoutQuestion").show();
 		$(".pLogin").hide();
 		$(".pSign").hide();
+		$(".pAffiche").hide();
 	});
 
 	$("#postSentiment").click(function(){

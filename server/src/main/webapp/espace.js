@@ -10,6 +10,7 @@ $(document).ready(function(){
 		$(".pAjoutQuestion").hide();
 		$(".pLogin").hide();
 		$(".pSign").hide();
+		$(".pAffiche").hide();
     	console.log("test");
     }); 
 })

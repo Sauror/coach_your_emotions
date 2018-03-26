@@ -16,6 +16,7 @@ $(document).ready(function(){
     	$(".pLogin").hide();
     	$(".pSign").hide();
     	$(".pEspace").hide();
+		$(".pAffiche").hide();
     	$(".pAjoutAdmin").hide();
     	console.log("test");
         $.ajax({
