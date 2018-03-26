@@ -8,6 +8,10 @@ $(document).ready(function(){
 		$(".pAjoutBesoin").hide();
 		$(".pAjoutExercice").hide();
 		$(".pAjoutQuestion").hide();
+		$(".pDeleteSentiment").hide();
+		$(".pDeleteBesoin").hide();
+		$(".pDeleteExercice").hide();
+		$(".pDeleteQuestion").hide();
 		$(".pLogin").hide();
 		$(".pSign").hide();
 		$(".pAffiche").hide();
@@ -22,7 +26,6 @@ $(document).ready(function(){
 		$(".pAjoutBesoin").hide();
 		$(".pAjoutExercice").hide();
 		$(".pAjoutQuestion").hide();
-		//$("#sentiment").hide();
 		$(".pLogin").hide();
 		$(".pSign").hide();
 		$(".pAffiche").hide();
