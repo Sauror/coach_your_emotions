@@ -15,7 +15,7 @@ $(document).ready(function(){
 	$(".pDeleteQuestion").hide();
 	$(".pAffiche").hide();
 
-    $("#ressource").click(function(){
+    $(".ressource").click(function(){
     	$(".pRessource").show();
     	$(".pExercice").hide();
     	$(".pAjoutAdmin").hide();
@@ -23,7 +23,10 @@ $(document).ready(function(){
         $("article").hide();
         $(".pSign").hide();
         $(".pLogin").hide();
-		$(".pAffiche").hide();
+	$(".pAffiche").hide();
+	$("#logoAccueil").hide();
+        $("#accueil").hide();
+        $("#description").hide();
         $(".divAccordeonSB").css("display","none");
     	console.log("test");
     }); 
