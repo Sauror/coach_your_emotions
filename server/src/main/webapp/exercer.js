@@ -5,7 +5,7 @@ var val = 1;
 $(document).ready(function(){
 	
 	//QUAND ON CLICK SUR S'EXERCER
-    $(".exercer").click(function(){ // mettre un point
+    $(".exercer").click(function(){
 		$(".pRessource").hide();
 		$("#menuVertical").show();
 		$("#logoAcceuil").hide();
@@ -32,17 +32,13 @@ $(document).ready(function(){
     	$("#login").hide();
     	$("#page").show();
         $("#logoPage").show();
-
         $("#menuVertical").css("background-color", "#ffce8c");
-
         $("li a").hover(function(){
             $(this).css("background-color", "#f5852f");
         }, function(){
             $(this).css("background-color", "#ffce8c");
         });
-
         $("body").css("background-color","#fddca7");
-
 
         $.ajax({
         	url: "http://localhost:8080/cye/exercice",
@@ -159,35 +155,35 @@ $(document).ready(function(){
 					var b1 = document.createElement("button");
 					var nomB1 = document.createTextNode("Oui");
 					b1.appendChild(nomB1);
-					b1.className = "buttonOui" + cpt ;
+					b1.className = "btn";
 					b1.id = "idOui" + cpt;
 
 					//button non
 					var b2 = document.createElement("button");
 					var nomB2 = document.createTextNode("Non");
 					b2.appendChild(nomB2);
-					b2.className = "buttonNon" + cpt;
+					b2.className = "btn";
 					b2.id = "idNon" + cpt;
 					
 					//text oui
 					var textOui = document.createElement("p");
 					var nomTextOui = document.createTextNode(question.correctionOui);
 					textOui.appendChild(nomTextOui);
-					textOui.className = "textOui" + cpt ;
+					textOui.className = "btnOui";
 					textOui.id = "idTextOui" + cpt;
 					
 					//text non
 					var textNon = document.createElement("p");
 					var nomTextNon = document.createTextNode(question.correctionNon);
 					textNon.appendChild(nomTextNon);
-					textNon.className = "textNon" + cpt ;
+					textNon.className = "btnNon";
 					textNon.id = "idTextNon" + cpt;
 					
 					//button next
 					var next = document.createElement("button");
 					var labelNext = document.createTextNode("Suivant");
 					next.appendChild(labelNext);
-					next.className = "buttonNext" + cpt;
+					next.className = "btn";
 					next.id = "idNext" + cpt;
 
 					$("#formOutPut").append(div);
@@ -231,6 +227,7 @@ $(document).ready(function(){
 						if(val == cpt){
 						$("#formOutPut").empty();
 						alert("Félicitations d’avoir pris quelques minutes pour vous exercer à la Communication NonViolente et de confronter votre vision à la notre. \nN’hésitez pas à continuer avec les autres exercices à votre disposition !");
+						window.location = "http://localhost:8080/";
 						}	
 					});	
 					cpt++;	
