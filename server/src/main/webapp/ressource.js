@@ -104,7 +104,7 @@ $(document).ready(function(){
     $("#sentiment").click(function(event){
         var categorie = "";
         $.ajax({
-            url: "http://localhost:8080/cye/sentiment",
+            url: "http://51.255.131.197/cye/sentiment",
             type: "GET",
             contentType: 'application/json;charset=utf-8',
 
@@ -145,7 +145,7 @@ $(document).ready(function(){
     $("#besoin").click(function(event){
         var categorie = "";
         $.ajax({
-            url: "http://localhost:8080/cye/besoin",
+            url: "http://51.255.131.197/cye/besoin",
             type: "GET",
             dataType: "json",
 
