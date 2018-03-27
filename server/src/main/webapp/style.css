@@ -83,6 +83,7 @@ h3 {
     text-decoration: none;
     margin: 4px 2px;
     cursor: pointer;
+    width: 99%;
 }
 
 h1#accueil {
@@ -135,7 +136,7 @@ li a:hover {
     color: white;
 }
 
-#accordeon, .pAjoutAdmin, .pEspace, #formOutPut  {
+#accordeon, .pAjoutAdmin, .pEspace, .pExercice  {
     margin-left: 210px;
 }
 
@@ -193,4 +194,13 @@ ul#reseaux li {
 
 .buttonExo:hover {
     background-color: #f5852f;
+}
+
+#btnMenu {
+    color: black;
+    font-size: 36px;
+}
+
+#btnMenu:hover {
+    color: white;
 }

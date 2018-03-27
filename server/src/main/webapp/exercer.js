@@ -30,7 +30,6 @@ $(document).ready(function(){
     	$("#description").hide();
     	$("#sign").hide();
     	$("#login").hide();
-    	$("#page").show();
         $("#logoPage").show();
         $("#menuVertical").css("background-color", "#ffce8c");
         $("li a").hover(function(){
@@ -39,6 +38,9 @@ $(document).ready(function(){
             $(this).css("background-color", "#ffce8c");
         });
         $("body").css("background-color","#fddca7");
+
+        $(".navbar").show();
+        $(".navbar").css("background-color", "#ffce8c");
 
         $.ajax({
         	url: "http://localhost:8080/cye/exercice",
