@@ -1,5 +1,3 @@
-var testAdmin = false;
-
 $(document).ready(function(){
     $(".pRessource").hide();
     $(".pExercice").hide();
@@ -24,6 +22,7 @@ $(document).ready(function(){
     $(".pPutExercice").hide();
     $(".pPutQuestion").hide();
     $("#admin").hide();
+    $("#AjoutAdmin").hide();
 
     $(".ressource").click(function(){
     	$(".pRessource").show();
@@ -42,6 +41,19 @@ $(document).ready(function(){
         $("#sign").hide();
         $("#login").hide();
         $(".navbar").show();
+        $(".pAjoutSentiment").hide();
+        $(".pAjoutBesoin").hide();
+        $(".pAjoutExercice").hide();
+        $(".pAjoutBesoin").hide();
+        $(".pAjoutQuestion").hide();
+        $(".pDeleteSentiment").hide();
+        $(".pDeleteBesoin").hide();
+        $(".pDeleteExercice").hide();
+        $(".pDeleteQuestion").hide();
+        $(".pPutSentiment").hide();
+        $(".pPutBesoin").hide();
+        $(".pPutExercice").hide();
+        $(".pPutQuestion").hide();
         $(".navbar").css("background-color", "#9cdedd");
         $("#menuVertical").css("background-color", "#9cdedd");
 
@@ -83,18 +95,23 @@ $(document).ready(function(){
 
             success: function(json) {
                 $("#formOutPut").empty()
-                json.forEach(function(exercice, idx) {
-                    var t = document.createTextNode(user.nom);
-                    if(t == $("#log").val()){
-                    testAdmin = true;
+                json.forEach(function(user, idx) {
+                    var t = user.name;
+                    console.log(t);
+                    console.log($("#log").val());
+                    if(t == ($("#log").val())){
+                        $("#admin").hide();
+                        $(".pAjoutAdmin").show();
+                        $("#menuVertical").show();
+                        $(".ressource").show();
+                        $(".exercer").show();
+                        $(".espace").show();
+                        $("#menuHorizontal").hide();
+                    }
+                    else{
+                        alert("mauvais user");
                     }
                 });
-                if(testAdmin == true){
-                    $("#admin").hide();
-                    $(".pAjoutAdmin").show();
-                }else{
-                alert("mauvais user");
-                }
             },
 
             error: function(xhr, status, errorThrown){

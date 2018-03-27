@@ -213,3 +213,7 @@ ul#reseaux li {
 #btnMenu:hover {
     color: white;
 }
+
+.pDeleteSentiment, .pDeleteBesoin, .pDeleteExercice, .pDeleteQuestion {
+    margin-left: 150px;
+}
