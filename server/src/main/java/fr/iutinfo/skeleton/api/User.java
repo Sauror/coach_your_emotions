@@ -21,6 +21,8 @@ public class User implements Principal {
     private String passwdHash;
     private String salt;
     private String search;
+    private boolean admin;
+    
 
     public User(int id, String name) {
         this.id = id;
@@ -28,6 +30,12 @@ public class User implements Principal {
     }
 
     public User(int id, String name, String alias) {
+        this.id = id;
+        this.name = name;
+        this.alias = alias;
+    }
+    
+    public User(int id, String name, String alias, boolean admin) {
         this.id = id;
         this.name = name;
         this.alias = alias;
@@ -60,7 +68,15 @@ public class User implements Principal {
         return name;
     }
 
-    public void setName(String name) {
+    public boolean isAdmin() {
+		return admin;
+	}
+
+	public void setAdmin(boolean admin) {
+		this.admin = admin;
+	}
+
+	public void setName(String name) {
         this.name = name;
     }
 
@@ -175,6 +191,7 @@ public class User implements Principal {
         this.setId(dto.getId());
         this.setName(dto.getName());
         this.setPassword(dto.getPassword());
+        this.setAdmin(dto.isAdmin());
     }
 
     public UserDto convertToDto() {
@@ -184,6 +201,7 @@ public class User implements Principal {
         dto.setId(this.getId());
         dto.setName(this.getName());
         dto.setPassword(this.getPassword());
+        dto.setAdmin(this.isAdmin());
         return dto;
     }
 }
