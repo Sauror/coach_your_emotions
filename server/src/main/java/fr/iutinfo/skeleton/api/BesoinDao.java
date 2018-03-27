@@ -9,6 +9,9 @@ import org.skife.jdbi.v2.sqlobject.SqlUpdate;
 import org.skife.jdbi.v2.sqlobject.customizers.RegisterMapperFactory;
 import org.skife.jdbi.v2.tweak.BeanMapperFactory;
 
+import fr.iutinfo.skeleton.common.dto.BesoinDto;
+import fr.iutinfo.skeleton.common.dto.SentimentDto;
+
 public interface BesoinDao {
 	@SqlUpdate("create table besoin (id integer primary key autoincrement, nom varchar(20), categorie varchar(20))")
     void createBesoinTable();
@@ -39,5 +42,9 @@ public interface BesoinDao {
     @RegisterMapperFactory(BeanMapperFactory.class)
     Besoin findById(@Bind("id") int id);
 	
-	void close();
+	 @SqlUpdate("Update besoin set nom = :nom, categorie = :categorie where id = :id")
+	 @RegisterMapperFactory(BeanMapperFactory.class)
+	 void update(@Bind("id") int id, @BindBean() BesoinDto dto);
+	 
+	 void close();
 }

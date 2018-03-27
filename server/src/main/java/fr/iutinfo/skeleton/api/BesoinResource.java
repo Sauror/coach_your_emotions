@@ -1,6 +1,7 @@
 package fr.iutinfo.skeleton.api;
 
 import fr.iutinfo.skeleton.common.dto.BesoinDto;
+import fr.iutinfo.skeleton.common.dto.SentimentDto;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -65,6 +66,12 @@ public class BesoinResource {
 	@Path("/{id}")
 	public void deleteBesoin(@PathParam("id") int id) {
 		dao.delete(id);
+	}
+	
+	@PUT
+	@Path("/{id}")
+	public void putBesoin(@PathParam("id") int id, BesoinDto dto) {
+		dao.update(id, dto);
 	}
 
 }

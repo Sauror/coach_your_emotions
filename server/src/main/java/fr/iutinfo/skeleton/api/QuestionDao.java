@@ -10,6 +10,9 @@ import org.skife.jdbi.v2.sqlobject.SqlUpdate;
 import org.skife.jdbi.v2.sqlobject.customizers.RegisterMapperFactory;
 import org.skife.jdbi.v2.tweak.BeanMapperFactory;
 
+import fr.iutinfo.skeleton.common.dto.QuestionDto;
+import fr.iutinfo.skeleton.common.dto.SentimentDto;
+
 public interface QuestionDao {
 	@SqlUpdate("create table question (id integer primary key autoincrement, idExo integer, question varchar(100), correctionOui varchar(200), correctionNon varchar(200), reponseAttendue varchar(3), foreign key(idExo) references exercice(id))")
     void createQuestionTable();
@@ -39,6 +42,11 @@ public interface QuestionDao {
     @SqlQuery("select * from question order by id")
     @RegisterMapperFactory(BeanMapperFactory.class)
     List<Question> all();
+    
+    @SqlUpdate("Update question set idExo = :idExo, question = :question, correctionOui = :correctionOui, correctionNon = :correctionNon, reponseAttendue =:reponseAttendue where id = :id")
+    @RegisterMapperFactory(BeanMapperFactory.class)
+    void update(@Bind("id") int id, @BindBean() QuestionDto dto);
+    
     
     void close();
 }
