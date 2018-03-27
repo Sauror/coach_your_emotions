@@ -18,7 +18,7 @@ public interface UserDao {
     @RegisterMapperFactory(BeanMapperFactory.class)
     User findByName(@Bind("name") String name);
     
-    @SqlQuery("select * from users where admin = true")
+    @SqlQuery("select * from users where admin = 1")
     @RegisterMapperFactory(BeanMapperFactory.class)
     List<User> findAdmin();
 

@@ -39,6 +39,7 @@ public class User implements Principal {
         this.id = id;
         this.name = name;
         this.alias = alias;
+		this.admin = admin;
     }
 
     public User() {
