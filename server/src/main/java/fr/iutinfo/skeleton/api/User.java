@@ -68,8 +68,8 @@ public class User implements Principal {
         return name;
     }
 
-    public boolean isAdmin() {
-		return admin;
+	public boolean isAdmin() {
+		return admin;	
 	}
 
 	public void setAdmin(boolean admin) {
