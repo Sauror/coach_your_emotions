@@ -6,6 +6,8 @@ $(document).ready(function(){
 	
 	//QUAND ON CLICK SUR S'EXERCER
     $(".exercer").click(function(){
+		cpt = 1;
+		val = 1;
 		$(".pRessource").hide();
 		$("#menuVertical").show();
 		$("#logoAcceuil").hide();
@@ -30,7 +32,6 @@ $(document).ready(function(){
     	$("#description").hide();
     	$("#sign").hide();
     	$("#login").hide();
-    	$("#page").show();
         $("#logoPage").show();
         $("#menuVertical").css("background-color", "#ffce8c");
         $("li a").hover(function(){
@@ -39,9 +40,11 @@ $(document).ready(function(){
             $(this).css("background-color", "#ffce8c");
         });
         $("body").css("background-color","#fddca7");
+		$(".navbar").show();
+        $(".navbar").css("background-color", "#ffce8c");
 
         $.ajax({
-        	url: "http://localhost:8080/cye/exercice",
+        	url: "http://51.255.131.197/cye/exercice",
             type: "GET",
             contentType: 'application/json;charset=utf-8',
 
@@ -68,7 +71,7 @@ $(document).ready(function(){
 
 	//QUAND ON CLICK SUR UN DES EXO
 	$("#formOutPut").on("click", ".buttonExo",function(){
-		$.get("http://localhost:8080/cye/exercice/" + this.id, function(exercice, status) {
+		$.get("http://51.255.131.197/cye/exercice/" + this.id, function(exercice, status) {
 			$("#formOutPut").empty()
 			var aide = document.createElement("p");
 			var id = document.createTextNode(exercice.id);
@@ -101,11 +104,9 @@ $(document).ready(function(){
 	
 	//QUAND ON CLIC SUR RETOUR	
 	$("#formOutPut").on("click", "#idBtn1",function(){
-		$(".pRessource").hide();
-    	$(".pExercice").show();
-    	$(".pEspace").hide();
+
         $.ajax({
-            url: "http://localhost:8080/cye/exercice",
+            url: "http://51.255.131.197/cye/exercice",
             type: "GET",
             contentType: 'application/json;charset=utf-8',
 
@@ -131,7 +132,7 @@ $(document).ready(function(){
 	//QUAND ON CLIC SUR COMMENCER
 	$("#formOutPut").on("click", "#idBtn2",function(){
 		$.ajax({
-			url: "http://localhost:8080/cye/question/exoid/" + exoActuel,
+			url: "http://51.255.131.197/cye/question/exoid/" + exoActuel,
 			type: "GET",
 			contentType: 'application/json;charset=utf-8',
 
@@ -217,6 +218,7 @@ $(document).ready(function(){
 						$("#idNext" + cpt).show();	
 					});	
 				
+					//QUAND ON CLIC SUR NEXT
 					$("#idNext"+cpt).on("click",function(){
 						$("#idDiv" + cpt).hide();
 						cpt++;
@@ -224,10 +226,35 @@ $(document).ready(function(){
 						$("#idTextNon" + cpt).hide();
 						$("#idNext" + cpt).hide();
 						$("#idDiv" + cpt).show();
-						if(val == cpt){
-						$("#formOutPut").empty();
-						alert("Félicitations d’avoir pris quelques minutes pour vous exercer à la Communication NonViolente et de confronter votre vision à la notre. \nN’hésitez pas à continuer avec les autres exercices à votre disposition !");
-						window.location = "http://localhost:8080/";
+						if(val == cpt && cpt != 1){
+							$("#formOutPut").empty();
+							alert("Félicitations d’avoir pris quelques minutes pour vous exercer à la Communication NonViolente et de confronter votre vision à la notre. \nN’hésitez pas à continuer avec les autres exercices à votre disposition !");
+							cpt = 1;
+							val = 1;	
+					 		$.ajax({
+								url: "http://51.255.131.197/cye/exercice",
+								type: "GET",
+								contentType: 'application/json;charset=utf-8',
+
+								success: function(json) {
+									$("#formOutPut").empty()
+									console.log("success");
+			
+									json.forEach(function(exercice, idx) {
+										var btn = document.createElement("BUTTON");
+										var t = document.createTextNode(exercice.nom);
+										btn.appendChild(t);
+										btn.className = "buttonExo";
+										btn.id = exercice.id;
+										$("#formOutPut").append(btn);
+										$("#formOutPut").append("<br>");
+									});
+						  	    },
+
+						  	    error: function(xhr, status, errorThrown){
+									console.log( "Error: " + errorThrown );
+								}
+							});
 						}	
 					});	
 					cpt++;	

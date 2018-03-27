@@ -3,7 +3,8 @@
 SAURO Romain
 
 ## Ce que nous avons fait durant ce sprint
-	Continuer avec les décisions prises précédemment et communiquer plus.
+	Continuer avec les décisions prises précédemment.
+    Communiquer plus au sein du groupe. C'est à dire, par exemple, prévenir l'ensemble du groupe si un problème se fait sentir.
 
 ## Ce que nous allons faire durant le prochain sprint
 	Modifier les groupes de travail.
@@ -12,7 +13,8 @@ SAURO Romain
 
 ## PDCA 
 ### Qu'avons nous testé durant ce sprint ?
-	Continuer avec les décisions prises précédemment et communiquer plus.
+	Continuer avec les décisions prises précédemment.
+    Communiquer plus au sein du groupe. C'est à dire, par exemple, prévenir l'ensemble du groupe si un problème se fait sentir.
 
 ### Qu'avons nous observé ?
 	Meilleur decoupage des tâches, et de loin.

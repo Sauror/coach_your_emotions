@@ -30,7 +30,9 @@ $(document).ready(function(){
             $(this).css("background-color", "#fdced6");
         });
 
-     	$("#page").show();
+        $(".navbar").show();
+        $(".navbar").css("background-color", "#fdced6");
+        
         $("#logoPage").show();
         $("body").css("background-color","#f8dfe2");
     	console.log("test");

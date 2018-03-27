@@ -15,8 +15,8 @@ $(document).ready(function(){
 	$(".pDeleteQuestion").hide();
 	$(".pAffiche").hide();
     $("#menuVertical").hide();
-    $("#page").hide();
     $("#logoPage").hide();
+    $(".navbar").hide();
 
     $(".ressource").click(function(){
     	$(".pRessource").show();
@@ -34,6 +34,8 @@ $(document).ready(function(){
         $("#menuVertical").show();
         $("#sign").hide();
         $("#login").hide();
+        $(".navbar").show();
+        $(".navbar").css("background-color", "#9cdedd");
         $("#menuVertical").css("background-color", "#9cdedd");
 
         $("li a").hover(function(){
@@ -45,7 +47,6 @@ $(document).ready(function(){
         $("body").css("background-color","#c4ebea");
         $(".divAccordeonSB").css("display","none");
 
-        $("#page").show();
         $("#logoPage").show();
     	console.log("test");
     }); 
@@ -103,7 +104,7 @@ $(document).ready(function(){
     $("#sentiment").click(function(event){
         var categorie = "";
         $.ajax({
-            url: "http://localhost:8080/cye/sentiment",
+            url: "http://51.255.131.197/cye/sentiment",
             type: "GET",
             contentType: 'application/json;charset=utf-8',
 
@@ -144,7 +145,7 @@ $(document).ready(function(){
     $("#besoin").click(function(event){
         var categorie = "";
         $.ajax({
-            url: "http://localhost:8080/cye/besoin",
+            url: "http://51.255.131.197/cye/besoin",
             type: "GET",
             dataType: "json",
 

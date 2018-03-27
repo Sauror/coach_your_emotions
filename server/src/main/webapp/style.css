@@ -83,6 +83,7 @@ h3 {
     text-decoration: none;
     margin: 4px 2px;
     cursor: pointer;
+    width: 99%;
 }
 
 h1#accueil {
@@ -122,7 +123,7 @@ ul#menuVertical {
     margin-top: 5%;
 }
 
-li a {
+#menuVertical li a {
     font-size: 30px;
     display: block;
     color: #000;
@@ -130,12 +131,12 @@ li a {
     text-decoration: none;
 }
 
-li a:hover {
+#menuVertical li a:hover {
     background-color: #555;
     color: white;
 }
 
-#accordeon, .pAjoutAdmin, .pEspace, #formOutPut  {
+#accordeon, .pAjoutAdmin, .pEspace, .pExercice  {
     margin-left: 210px;
 }
 
@@ -173,6 +174,7 @@ ul#reseaux li {
 
 .btn {
     background-color: #fd9b44;
+    margin-right: 1%;
 }
 
 .btn:hover {
@@ -193,4 +195,13 @@ ul#reseaux li {
 
 .buttonExo:hover {
     background-color: #f5852f;
+}
+
+#btnMenu {
+    color: black;
+    font-size: 36px;
+}
+
+#btnMenu:hover {
+    color: white;
 }
