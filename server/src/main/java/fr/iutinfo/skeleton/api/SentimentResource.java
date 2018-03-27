@@ -24,9 +24,16 @@ public class SentimentResource {
 			dao.insert(new Sentiment(0, "Content", "Content"));
 			dao.insert(new Sentiment(1, "Heureux", "Content"));
 			dao.insert(new Sentiment(2, "Joyeux", "Content"));
-			dao.insert(new Sentiment(3, "Las", "Fatigué"));
-			dao.insert(new Sentiment(4, "Endormi", "Fatigué"));
-			dao.insert(new Sentiment(5, "Démoralisé", "Triste"));
+			dao.insert(new Sentiment(3, "Excité", "Content"));
+			dao.insert(new Sentiment(4, "Enjoué", "Gai"));
+			dao.insert(new Sentiment(5, "Vivifié", "Gai"));
+			dao.insert(new Sentiment(6, "Pétillant", "Gai"));
+			dao.insert(new Sentiment(7, "Aventureux", "Gai"));
+			dao.insert(new Sentiment(8, "Perplexe", "Confus"));
+			dao.insert(new Sentiment(9, "Inerte", "Confus"));
+			dao.insert(new Sentiment(10, "Tiraillé", "Confus"));
+			dao.insert(new Sentiment(11, "Hésitant", "Confus"));
+			
 		}
 	}
 

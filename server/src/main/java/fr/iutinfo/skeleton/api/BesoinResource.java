@@ -22,12 +22,19 @@ public class BesoinResource {
 		dao.dropBesoinTable();
 		if (!tableExist("besoin")) {
 			dao.createBesoinTable();
-			dao.insert(new Besoin(0, "Manger", "Besoins-vitaux"));
-			dao.insert(new Besoin(1, "Boire", "Besoins-vitaux"));
-			dao.insert(new Besoin(2, "Dormir", "Besoins-vitaux"));
-			dao.insert(new Besoin(3, "Rire", "Divertissement"));
-			dao.insert(new Besoin(4, "Jouer", "Divertissement"));
-			dao.insert(new Besoin(5, "Parler", "Social"));
+			dao.insert(new Besoin(0, "Lumière", "Survie"));
+			dao.insert(new Besoin(1, "Repos", "Survie"));
+			dao.insert(new Besoin(2, "Mouvement", "Survie"));
+			dao.insert(new Besoin(3, "Alimentation", "Survie"));
+			dao.insert(new Besoin(4, "Proctection", "Sécurité"));
+			dao.insert(new Besoin(5, "Soutien", "Sécurité"));
+			dao.insert(new Besoin(6, "Paix", "Sécurité"));
+			dao.insert(new Besoin(7, "Harmonie", "Sécurité"));
+			dao.insert(new Besoin(8, "Unité", "Sens"));
+			dao.insert(new Besoin(9, "Orientation", "Sens"));
+			dao.insert(new Besoin(10, "Clarté", "Sens"));
+			dao.insert(new Besoin(11,"Orientation", "Sens"));
+			
 		}
 	}
 
