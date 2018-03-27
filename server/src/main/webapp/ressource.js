@@ -77,7 +77,7 @@ $(document).ready(function(){
 
    $("#valideMdp").click(function(event){
         $.ajax({
-            url: "http://51.255.131.197/cye/user",
+            url: "http://localhost:8080/cye/user/admin",
             type: "GET",
             contentType: 'application/json;charset=utf-8',
 

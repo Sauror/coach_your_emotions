@@ -63,7 +63,7 @@ public class UserResource {
     
 
     @GET
-    @Path("/{admin}")
+    @Path("/admin")
     public List<UserDto> findAdmin() {
         List<User> users = dao.findAdmin();
         return users.stream().map(User::convertToDto).collect(Collectors.toList());
