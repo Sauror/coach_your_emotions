@@ -1,3 +1,5 @@
+var testAdmin = false;
+
 $(document).ready(function(){
     $(".pRessource").hide();
     $(".pExercice").hide();
@@ -17,6 +19,11 @@ $(document).ready(function(){
     $("#menuVertical").hide();
     $("#logoPage").hide();
     $(".navbar").hide();
+    $(".pPutSentiment").hide();
+    $(".pPutBesoin").hide();
+    $(".pPutExercice").hide();
+    $(".pPutQuestion").hide();
+    $("#admin").hide();
 
     $(".ressource").click(function(){
     	$(".pRessource").show();
@@ -50,6 +57,51 @@ $(document).ready(function(){
         $("#logoPage").show();
     	console.log("test");
     }); 
+
+    $(".logo").click(function(){
+        $(".ressource").hide();
+        $(".logo").hide();
+        $(".exercer").hide();
+        $("#description").hide();
+        $(".espace").hide();
+        $("#accueil").hide();
+        $("#sign").hide();
+        $("#login").hide();
+        $("#accordeon").hide();
+        $(".navbar").hide();
+        $(".pExercice").hide();
+        $(".pEspace").hide();
+        $("#admin").show();
+        console.log("test1");
+    });
+
+   $("#valideMdp").click(function(event){
+        $.ajax({
+            url: "http://51.255.131.197/cye/user",
+            type: "GET",
+            contentType: 'application/json;charset=utf-8',
+
+            success: function(json) {
+                $("#formOutPut").empty()
+                json.forEach(function(exercice, idx) {
+                    var t = document.createTextNode(user.nom);
+                    if(t == $("#log").val()){
+                    testAdmin = true;
+                    }
+                });
+                if(testAdmin == true){
+                    $("#admin").hide();
+                    $(".pAjoutAdmin").show();
+                }else{
+                alert("mauvais user");
+                }
+            },
+
+            error: function(xhr, status, errorThrown){
+                    console.log( "Error: " + errorThrown );
+            }
+        });
+    });
 
     // Accordeon general
     $("#accordeon .header").click(function(event){

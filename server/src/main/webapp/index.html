@@ -21,13 +21,17 @@
     <nav class="navbar navbar-inverse">
 	 <div class="container-fluid">
 	   <div class="navbar-header">
-	     <a id="btnMenu" class="navbar-brand" href="http://localhost:8080">CoachYourEmotions</a>
+	     <a id="btnMenu" class="navbar-brand" href="http://51.255.131.197">CoachYourEmotions</a>
 	   </div>
     </nav> 
-    <img id="logoAccueil" src="ressource/croquis.png" alt="Logo" />
-    <img id="logoPage" src="ressource/croquis.png" alt="Logo" />
+    <img id="logoAccueil" class="logo" src="ressource/croquis.png" alt="Logo" />
+    <img id="logoPage" class="logo" src="ressource/croquis.png" alt="Logo" />
     <br>
-    <p id="description"> Ici sera la description Dum apud Persas, ut supra narravimus, perfidia regis motus agitat insperatos, et in eois tractibus bella rediviva consurgunt, anno sexto decimo et eo diutius post Nepotiani exitium, saeviens per urbem aeternam urebat cuncta Bellona, ex primordiis minimis ad clades excita luctuosas, quas obliterasset utinam iuge silentium! ne forte paria quandoque temptentur, plus exemplis generalibus nocitura quam delictis.</p>
+    <p id="description">Bienvenue sur notre application Caoch Your Emotions. Cette application a pour vocation de vous accompagner à faire vos premiers pas en Communication NonViolente, avec des outils et des exercices pour tous. Les novices y trouveront un moyen de commencer à pratiquer la Communication NonViolente, là où les plus confirmés pourront l’utiliser comme un outil pratique et accessible pour ne plus jamais être en panne de vocabulaire pour mettre des mots sur nos besoins et nos émotions.
+    <br>
+    <br>
+Nous vous souhaitons un bon voyage au coeur de vous même :-)
+</p>
     <table id="menuHorizontal">
 
       <tr><td><img src="ressource/ressource.jpg" class="ressource" alt="ressource"></td>
@@ -296,7 +300,13 @@
     	<li><a href="https://www.twitter.com/intent/tweet/?url=51.255.131.197&text=Merci de partagez !"><img src="ressource/twitter.png" alt="twitter"/></a></li>
       </ul>
     </div>
-    
+
+    <div id="admin">
+      <p>Entrez votre nom d'administrateur</p>
+      <input type="text" name="mdp" id="log" placeholder="Nom administrateur" class="logAdmin"/>
+      <button type="button" id="valideMdp" class="OkMdp">Valider</button>
+    </div>
+
     <script type="text/javascript">
       $(document).ready(function() {
       $("#bLogin").click(function (event) {
