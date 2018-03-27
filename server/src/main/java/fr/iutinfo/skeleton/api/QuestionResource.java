@@ -33,10 +33,14 @@ public class QuestionResource {
 		dao.dropQuestionTable();
 		if (!tableExist("question")) {
 			dao.createQuestionTable();
-			dao.insert(new Question(1,1,"Question 1?","Pas vraiment !","Effectivem","oui"));
-			dao.insert(new Question(2,1,"Question 2?","correction oui","Perdu ! En effet ...","non"));
-			dao.insert(new Question(3,2,"Question 3?","correction oui","correction non","oui"));
-			dao.insert(new Question(4,1,"Question 4?","correction oui","correction non","oui"));
+			dao.insert(new Question(1,1,"J'ai le sentiment que tu ne m'aimes pas.","Nous ne sommes pas d'accord. De notre côté, nous pensons que \"tu ne m'aimes pas\" ne dit pas les sentiment de la personne qui parle, mais décrit ceux qu'elle attribue à l'autre.","Nous sommes d'accord","non"));
+			dao.insert(new Question(2,1,"Je suis triste que tu partes.","Nous sommes d'accord pour considérer qu'un sentiment a été spécifiquement exprimé.","Nous ne sommes pas d'accord.","oui"));
+			dao.insert(new Question(3,1,"J'ai peur quand tu dis cela.","Nous sommes d'accord pour considérer qu'un sentiment a été spécifiquement exprimé.","Nous ne sommes pas d'accord.","oui"));
+			dao.insert(new Question(4,1,"Quand tu ne me dis pas bonjour, je me sens délaissée.","Nous ne sommes pas d'accord. Nous pensons que \"délaissé\" n'exprime pas un sentiment mais ce que la personne pense qu'on lui fait. On aurait pu dire \"Quand tu ne me dis pas bonjour, je me sens seule.\"","Nous sommes d'accord","non"));
+			dao.insert(new Question(5,2,"J'ai le sentiment que tu ne m'aimes pas.","Nous ne sommes pas d'accord. De notre côté, nous pensons que \"tu ne m'aimes pas\" ne dit pas les sentiment de la personne qui parle, mais décrit ceux qu'elle attribue à l'autre.","Nous sommes d'accord","non"));
+			dao.insert(new Question(6,2,"Je suis triste que tu partes.","Nous sommes d'accord pour considérer qu'un sentiment a été spécifiquement exprimé.","Nous ne sommes pas d'accord.","oui"));
+			dao.insert(new Question(7,2,"J'ai peur quand tu dis cela.","Nous sommes d'accord pour considérer qu'un sentiment a été spécifiquement exprimé.","Nous ne sommes pas d'accord.","oui"));
+			dao.insert(new Question(8,2,"Quand tu ne me dis pas bonjour, je me sens délaissée.","Nous ne sommes pas d'accord. Nous pensons que \"délaissé\" n'exprime pas un sentiment mais ce que la personne pense qu'on lui fait. On aurait pu dire \"Quand tu ne me dis pas bonjour, je me sens seule.\"","Nous sommes d'accord","non"));
 		}
 	}
 

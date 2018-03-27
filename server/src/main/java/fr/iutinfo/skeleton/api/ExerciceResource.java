@@ -23,8 +23,8 @@ public class ExerciceResource {
 		dao.dropExerciceTable();
 		if (!tableExist("exercice")) {
 			dao.createExerciceTable();
-			dao.insert(new Exercice(0, "Observation VS Evaluation", "Consigne Globale", "Consigne Question"));
-			dao.insert(new Exercice(1, "Expression d'un sentiment", "Consigne GlobaleBCHSGDUHGHSFD", "Consigne QuestionDSIUDUISD"));
+			dao.insert(new Exercice(0, "Observation VS Evaluation", "Cet exercice vous aidera à évaluer votre capacité à séparer les observations des évaluations. Cochez les phrases qui sont de simples observations sans trace d'évaluation.", "Cette phrase contient de simples observations sans trace d'évaluation ?"));
+			dao.insert(new Exercice(1, "Si vous voulez voir si nous sommes d'accord sur l'expression verbale des sentiments, covhez les phrases où des sentiments sont nommés.", "Consigne GlobaleBCHSGDUHGHSFD", "Est-ce que le sentiment est nommé ?"));
 			
 		}
 	}
