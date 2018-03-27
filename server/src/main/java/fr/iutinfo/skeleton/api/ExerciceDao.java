@@ -8,7 +8,14 @@ import org.skife.jdbi.v2.sqlobject.SqlUpdate;
 import org.skife.jdbi.v2.sqlobject.customizers.RegisterMapperFactory;
 import org.skife.jdbi.v2.tweak.BeanMapperFactory;
 
+import fr.iutinfo.skeleton.common.dto.BesoinDto;
+import fr.iutinfo.skeleton.common.dto.ExerciceDto;
+
 import java.util.List;
+
+import javax.ws.rs.PUT;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 
 public interface ExerciceDao {
     @SqlUpdate("create table exercice (id integer primary key autoincrement, nom varchar(100), cg varchar(1000), cq varchar(1000))")
@@ -39,6 +46,11 @@ public interface ExerciceDao {
     @SqlQuery("select * from exercice where id = :id")
     @RegisterMapperFactory(BeanMapperFactory.class)
     Exercice findById(@Bind("id") int id);
-
+    
+    @SqlUpdate("Update exercice set nom = :nom, cg = :cg, cq =:cq where id = :id")
+	@RegisterMapperFactory(BeanMapperFactory.class)
+	void update(@Bind("id") int id, @BindBean() ExerciceDto dto);
+    
+    
     void close();
 }

@@ -1,5 +1,6 @@
 package fr.iutinfo.skeleton.api;
 
+import fr.iutinfo.skeleton.common.dto.BesoinDto;
 import fr.iutinfo.skeleton.common.dto.ExerciceDto;
 
 import javax.ws.rs.*;
@@ -64,5 +65,11 @@ public class ExerciceResource {
     public void deleteExercice(@PathParam("id") int id) {
         dao.delete(id);
     }
+	
+	@PUT
+	@Path("/{id}")
+	public void putExercice(@PathParam("id") int id, ExerciceDto dto) {
+		dao.update(id, dto);
+	}
 
 }

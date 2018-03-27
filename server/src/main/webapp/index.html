@@ -159,6 +159,10 @@
       <button type="button" id="DeleteBesoin" class="pAjoutAdmin btn btn-lg btn-block btn-success"> Supprimer un besoin </button>
       <button type="button" id="DeleteExercice" class="pAjoutAdmin btn btn-lg btn-block btn-success"> Supprimer un Exercice </button>
       <button type="button" id="DeleteQuestion" class="pAjoutAdmin btn btn-lg btn-block btn-success"> Supprimer une question </button>
+		<button type="button" id="PutSentiment" class="pAjoutAdmin btn btn-lg btn-block btn-success"> Modifier un sentiment </button>
+		<button type="button" id="PutBesoin" class="pAjoutAdmin btn btn-lg btn-block btn-success"> Modifier un besoin </button>
+		<button type="button" id="PutExercice" class="pAjoutAdmin btn btn-lg btn-block btn-success"> Modifier un exercice </button>
+		<button type="button" id="PutQuestion" class="pAjoutAdmin btn btn-lg btn-block btn-success"> Modifier une question </button>
     </div>
 
     <div id="pAjoutSentiment">
@@ -206,6 +210,39 @@
     <div id="pDeleteQuestion">
       <input type="text" name="questiondb" id="idQuestion" placeholder="Numéro de la question" class="pDeleteQuestion"/>
       <button type="button" id="dQuestion" class="pDeleteQuestion btn btn-lg btn-block btn-success"> Supprimer la question</button>
+    </div>
+
+
+	<div id="pPutSentiment">
+		<input type="text" name="sentimentdb" id="idSentimentPut" placeholder="Numéro du sentiment" class="pPutSentiment"/>
+      	<input type="text" name="sentimentdb" id="nomSentimentPut" placeholder="Nom du sentiment" class="pPutSentiment"/>
+		<input type="text" name="sentimentdb" id="categorieSentimentPut" placeholder="Catégorie du sentiment" class="pPutSentiment"/>
+      	<button type="button" id="putSentiment" class="pPutSentiment btn btn-lg btn-block btn-success"> Modifier le sentiment</button>
+    </div>
+
+	<div id="pPutBesoin">
+		<input type="text" name="besoindb" id="idBesoinPut" placeholder="Numéro du besoin" class="pPutBesoin"/>
+      	<input type="text" name="besoindb" id="nomBesoinPut" placeholder="Nom du besoin" class="pPutBesoin"/>
+		<input type="text" name="besoindb" id="categorieBesoinPut" placeholder="Catégorie du besoin" class="pPutBesoin"/>
+      	<button type="button" id="putBesoin" class="pPutBesoin btn btn-lg btn-block btn-success"> Modifier le besoin</button>
+    </div>
+
+	<div id="pPutExercice">
+		<input type="text" name="exercicedb" id="idExercicePut" placeholder="Numéro de l'exercice" class="pPutExercice"/>
+      	<input type="text" name="exercicedb" id="nomExercicePut" placeholder="Nom de l'exercice" class="pPutExercice"/>
+		<input type="text" name="exercicedb" id="cgExercicePut" placeholder="Consigne globale de l'exercice" class="pPutExercice"/>
+		<input type="text" name="exercicedb" id="cqExercicePut" placeholder="Consigne des questions de l'exercice" class="pPutExercice"/>
+      	<button type="button" id="putExercice" class="pPutExercice btn btn-lg btn-block btn-success"> Modifier l'exercice</button>
+    </div>
+
+	<div id="pPutQuestion">
+		<input type="text" name="questiondb" id="idQuestionPut" placeholder="Numéro de la question" class="pPutQuestion"/>
+		<input type="text" name="questiondb" id="exoQuestionPut" placeholder="Numéro de l'exercice" class="pPutQuestion"/>
+      	<input type="text" name="questiondb" id="nomQuestionPut" placeholder="Question" class="pPutQuestion"/>
+		<input type="text" name="questiondb" id="badQuestionPut" placeholder="Résultat mauvaise réponses" class="pPutQuestion"/>
+		<input type="text" name="questiondb" id="goodQuestionPut" placeholder="Résultat mauvaise réponses" class="pPutQuestion"/>
+		<input type="text" name="questiondb" id="repQuestionPut" placeholder="Réponse attendue" class="pPutQuestion"/>
+      	<button type="button" id="putQuestion" class="pPutQuestion btn btn-lg btn-block btn-success"> Modifier la question</button>
     </div>
 
 

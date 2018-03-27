@@ -65,5 +65,11 @@ public class SentimentResource {
     public void deleteSentiment(@PathParam("id") int id) {
         dao.delete(id);
     }
+	
+	@PUT
+	@Path("/{id}")
+	public void putSentiment(@PathParam("id") int id, SentimentDto dto) {
+		dao.update(id, dto);
+	}
 
 }

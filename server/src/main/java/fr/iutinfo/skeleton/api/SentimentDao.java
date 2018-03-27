@@ -4,6 +4,8 @@ import org.skife.jdbi.v2.sqlobject.*;
 import org.skife.jdbi.v2.sqlobject.customizers.RegisterMapperFactory;
 import org.skife.jdbi.v2.tweak.BeanMapperFactory;
 
+import fr.iutinfo.skeleton.common.dto.SentimentDto;
+
 import java.util.List;
 
 public interface SentimentDao {
@@ -35,6 +37,10 @@ public interface SentimentDao {
     @SqlQuery("select * from sentiment where id = :id")
     @RegisterMapperFactory(BeanMapperFactory.class)
     Sentiment findById(@Bind("id") int id);
+    
+    @SqlUpdate("Update sentiment set nom = :nom, categorie = :categorie where id = :id")
+    @RegisterMapperFactory(BeanMapperFactory.class)
+    void update(@Bind("id") int id, @BindBean() SentimentDto dto);
     
     void close();
 }
