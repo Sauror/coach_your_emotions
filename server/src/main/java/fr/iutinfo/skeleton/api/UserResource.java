@@ -24,7 +24,8 @@ public class UserResource {
         if (!tableExist("users")) {
             logger.debug("Crate table users");
             dao.createUserTable();
-            dao.insert(new User(0, "Margaret Thatcher", "la Dame de fer"));
+            dao.insert(new User(0, "Margaret Thatcher", "la Dame de fer", false));
+            dao.insert(new User(1, "Julie", "Juju", true));
         }
     }
 
@@ -47,7 +48,7 @@ public class UserResource {
         }
         return user.convertToDto();
     }
-
+    
     @GET
     public List<UserDto> getAllUsers(@QueryParam("q") String query) {
         List<User> users;
@@ -57,6 +58,14 @@ public class UserResource {
             logger.debug("Search users with query: " + query);
             users = dao.search("%" + query + "%");
         }
+        return users.stream().map(User::convertToDto).collect(Collectors.toList());
+    }
+    
+
+    @GET
+    @Path("/{admin}")
+    public List<UserDto> findAdmin() {
+        List<User> users = dao.findAdmin();
         return users.stream().map(User::convertToDto).collect(Collectors.toList());
     }
 
