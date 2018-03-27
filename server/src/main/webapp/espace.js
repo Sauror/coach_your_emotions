@@ -12,6 +12,11 @@ $(document).ready(function(){
 		$(".pDeleteBesoin").hide();
 		$(".pDeleteExercice").hide();
 		$(".pDeleteQuestion").hide();
+
+        $(".pPutSentiment").hide();
+        $(".pPutBesoin").hide();
+        $(".pPutExercice").hide();
+        $(".pPutQuestion").hide();
 		$(".pLogin").hide();
 		$(".pSign").hide();
 		$("#login").hide();
@@ -32,7 +37,7 @@ $(document).ready(function(){
 
         $(".navbar").show();
         $(".navbar").css("background-color", "#fdced6");
-        
+
         $("#logoPage").show();
         $("body").css("background-color","#f8dfe2");
     	console.log("test");

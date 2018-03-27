@@ -21,6 +21,10 @@ $(document).ready(function(){
     	$(".pAjoutBesoin").hide();
     	$(".pAjoutExercice").hide();
     	$(".pAjoutQuestion").hide();
+        $(".pPutSentiment").hide();
+        $(".pPutBesoin").hide();
+        $(".pPutExercice").hide();
+        $(".pPutQuestion").hide();
     	$(".pLogin").hide();
     	$(".pSign").hide();
     	$(".pEspace").hide();
