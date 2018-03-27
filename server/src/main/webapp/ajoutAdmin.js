@@ -12,6 +12,10 @@ $(document).ready(function(){
 		$(".pDeleteBesoin").hide();
 		$(".pDeleteExercice").hide();
 		$(".pDeleteQuestion").hide();
+		$(".pPutSentiment").hide();
+		$(".pPutBesoin").hide();
+		$(".pPutExercice").hide();
+		$(".pPutQuestion").hide();
 		$(".pLogin").hide();
 		$(".pSign").hide();
 		$(".pAffiche").hide();
@@ -139,6 +143,79 @@ $(document).ready(function(){
 		$(".pLogin").hide();
 		$(".pSign").hide();
 	});
+
+	$("#PutSentiment").click(function(){
+		$(".pRessource").hide();
+		$(".pExercice").hide();
+		$(".pEspace").hide();
+		$(".pAjoutAdmin").hide();
+		$(".pAjoutSentiment").hide();
+		$(".pAjoutBesoin").hide();
+		$(".pAjoutExercice").hide();
+		$(".pDeleteSentiment").hide();
+		$(".pDeleteBesoin").hide();
+		$(".pDeleteExercice").hide();
+		$(".pDeleteQuestion").hide();
+		$(".pAjoutQuestion").hide();
+		$(".pPutSentiment").show();
+		$(".pLogin").hide();
+		$(".pSign").hide();
+	});
+
+	$("#PutBesoin").click(function(){
+		$(".pRessource").hide();
+		$(".pExercice").hide();
+		$(".pEspace").hide();
+		$(".pAjoutAdmin").hide();
+		$(".pAjoutSentiment").hide();
+		$(".pAjoutBesoin").hide();
+		$(".pAjoutExercice").hide();
+		$(".pDeleteSentiment").hide();
+		$(".pDeleteBesoin").hide();
+		$(".pDeleteExercice").hide();
+		$(".pDeleteQuestion").hide();
+		$(".pAjoutQuestion").hide();
+		$(".pPutBesoin").show();
+		$(".pLogin").hide();
+		$(".pSign").hide();
+	});
+
+	$("#PutExercice").click(function(){
+		$(".pRessource").hide();
+		$(".pExercice").hide();
+		$(".pEspace").hide();
+		$(".pAjoutAdmin").hide();
+		$(".pAjoutSentiment").hide();
+		$(".pAjoutBesoin").hide();
+		$(".pAjoutExercice").hide();
+		$(".pDeleteSentiment").hide();
+		$(".pDeleteBesoin").hide();
+		$(".pDeleteExercice").hide();
+		$(".pDeleteQuestion").hide();
+		$(".pAjoutQuestion").hide();
+		$(".pPutExercice").show();
+		$(".pLogin").hide();
+		$(".pSign").hide();
+	});
+
+	$("#PutQuestion").click(function(){
+		$(".pRessource").hide();
+		$(".pExercice").hide();
+		$(".pEspace").hide();
+		$(".pAjoutAdmin").hide();
+		$(".pAjoutSentiment").hide();
+		$(".pAjoutBesoin").hide();
+		$(".pAjoutExercice").hide();
+		$(".pDeleteSentiment").hide();
+		$(".pDeleteBesoin").hide();
+		$(".pDeleteExercice").hide();
+		$(".pDeleteQuestion").hide();
+		$(".pAjoutQuestion").hide();
+		$(".pPutQuestion").show();
+		$(".pLogin").hide();
+		$(".pSign").hide();
+	});
+
 
 	$("#postSentiment").click(function(){
 		console.log($('#categorieSentiment').val())
@@ -457,11 +534,135 @@ $(document).ready(function(){
         });
     });
 
+	
+	$("#putSentiment").click(function(){
+		var url = 'http://localhost:8080/cye/sentiment/'+$('#idSentimentPut').val();
+		putSentiment(
+			$('#nomSentimentPut').val(),
+			$('#categorieSentimentPut').val(),
+			url
+		)});
+
+	function putSentiment(sentiment,categorie,url) {
+		var tmp = $('#idSentimentPut').val()
+		console.log("postSentiment " + url);
+		$.ajax({
+			type : 'PUT',
+			contentType : 'application/json',
+			url : url,
+			dataType : "json",
+			data : JSON.stringify({
+				"id" : tmp,
+				"nom" : sentiment,
+				"categorie" : categorie
+			}),
+			success : function(data, textStatus, jqXHR) {
+			console.log("Success request Put");
+			},
+			error : function(jqXHR, textStatus, errorThrown) {
+				console.log('postUser error: ' + textStatus);
+			}
+		});
+	}
 
 
+	$("#putBesoin").click(function(){
+		var url = 'http://localhost:8080/cye/besoin/'+$('#idBesoinPut').val();
+		putBesoin(
+			$('#nomBesoinPut').val(),
+			$('#categorieBesoinPut').val(),
+			url
+		)});
 
+	function putBesoin(besoin,categorie,url) {
+		var tmp = $('#idBesoinPut').val()
+		console.log("postBesoin " + url);
+		$.ajax({
+			type : 'PUT',
+			contentType : 'application/json',
+			url : url,
+			dataType : "json",
+			data : JSON.stringify({
+				"id" : tmp,
+				"nom" : besoin,
+				"categorie" : categorie
+			}),
+			success : function(data, textStatus, jqXHR) {
+			console.log("Success request Put");
+			},
+			error : function(jqXHR, textStatus, errorThrown) {
+				console.log('postUser error: ' + textStatus);
+			}
+		});
+	}
 
+	$("#putExercice").click(function(){
+		var url = 'http://localhost:8080/cye/exercice/'+$('#idExercicePut').val();
+		putExercice(
+			$('#nomExercicePut').val(),
+			$('#cgExercicePut').val(),
+			$('#cqExercicePut').val(),
+			url
+		)});
 
+	function putExercice(exercice,cg,cq,url) {
+		var tmp = $('#idExercicePut').val()
+		console.log("postExercice" + url);
+		$.ajax({
+			type : 'PUT',
+			contentType : 'application/json',
+			url : url,
+			dataType : "json",
+			data : JSON.stringify({
+				"id" : tmp,
+				"nom" :exercice,
+				"cg" : cg,
+				"cq" : cq
+			}),
+			success : function(data, textStatus, jqXHR) {
+			console.log("Success request Put");
+			},
+			error : function(jqXHR, textStatus, errorThrown) {
+				console.log('postUser error: ' + textStatus);
+			}
+		});
+	}
+
+	$("#putQuestion").click(function(){
+		var url = 'http://localhost:8080/cye/question/'+$('#idQuestionPut').val();
+		putQuestion(
+			$('#nomQuestionPut').val(),
+			$('#exoQuestionPut').val(),
+			$('#badQuestionPut').val(),
+			$('#goodQuestionPut').val(),
+			$('#repQuestionPut').val(),
+			url
+		)});
+
+	function putQuestion(question,exo,bad,good,rep,url) {
+		var tmp = $('#idQuestionPut').val()
+		console.log("postQuestion" + url);
+		$.ajax({
+			type : 'PUT',
+			contentType : 'application/json',
+			url : url,
+			dataType : "json",
+			data : JSON.stringify({
+				"id" : tmp,
+				"idExo" : exo,
+				"question": question,
+				"correctionOui" : good,
+				"correctionNon" : bad,
+				"reponseAttendue" : rep
+			}),
+			success : function(data, textStatus, jqXHR) {
+			console.log("Success request Put");
+			},
+			error : function(jqXHR, textStatus, errorThrown) {
+				console.log('postUser error: ' + textStatus);
+			}
+		});
+	}
 
 
 });
